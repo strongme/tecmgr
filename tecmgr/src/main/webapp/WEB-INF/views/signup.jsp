@@ -16,12 +16,14 @@
  </style>
 </head>
 <body>
-
-<div style="width: 30%;height: auto;margin: 10% auto;">
+<div style="text-align: center;">
+<h6><font face="楷体" color="pink" >如有问题请及时联系信息中心 ！申老师   TEL：15536660688 小袁  QQ：2022593664 TEL：15619388806</font></h6>
+</div>
+<div style="width: 30%;height: auto;margin:5% auto;">
 		<form action="<%=request.getContextPath() %>/signup" method="post" name="signup">
 	        <div class="row">
-	            <label class="label">教职工号</label>
-	            <input type="text" placeholder="请输入教职工号码" name="teacherid" id="teacherid" onchange="isExist(this.value)">
+	            <label class="label">身份证号码</label>
+	            <input type="text" placeholder="输入后请仔细核对身份证号码" name="teacherid" id="teacherid" onchange="isExist(this.value)">
 	        </div>
 	        <div class="row">
 	            <label class="label">密码</label>
@@ -37,6 +39,7 @@
 	            <select name="departmentname" id="departmentname">
 	            </select>
 	        </div>
+	        <h5><font face="楷体" color="red" >注册成功无法修改，请牢记您的身份证号和密码！</font></h5>
 	        <div class="row">
 	            <a class="small button large-4 columns" onclick="sign()">注册</a>
 	            <a class="small button large-4 columns" onclick="reset()">清空</a>
@@ -44,13 +47,7 @@
 	        </div>
 	</form>
 </div>
-<div style="position: absolute;right: 20px;color: white;filter:alpha(opacity=0.5);font-size: 1px;opacity:0.1;" id="contact">
-<ul style="list-style: none;display: inline;">
-<li>咨询:袁子茜</li>
-<li>QQ:15619388806</li>
-<li>手机:15619388806</li>
-</ul>
-</div>
+
    <script src="<%=request.getContextPath() %>/resources/scripts/jquery-1.8.3.js"></script>
   <script type="text/javascript">var basepath="<%=request.getContextPath()%>";</script>
   <script src="<%=request.getContextPath() %>/resources/scripts/foundation.min.js"></script>

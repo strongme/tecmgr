@@ -1,6 +1,7 @@
 $(function() {
 	var h = parseInt(document.body.clientHeight);
 	$('#contact').css('top',h);
+	$('#teacherid').focus();
 });
 
 function sign() {

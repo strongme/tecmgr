@@ -28,6 +28,7 @@ public class SignController {
 	public String signup(@RequestParam String teacherid,@RequestParam String password,@RequestParam String teachername,@RequestParam String departmentname,HttpServletRequest request) {
 		TeacherRecordBean bean = new TeacherRecordBean( teacherid, departmentname, teachername, password);
 		if(teacherRecordService.isExist(teacherid)) {
+			request.setAttribute("teacher", bean);
 			return "index";
 		}
 		int result = teacherRecordService.save(bean);
