@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>MASTER</title>
+  <title>管理员</title>
   <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/foundation.css">
   <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/foundation-datepicker.css">
   <script src="<%=request.getContextPath() %>/resources/vendor/custom.modernizr.js"></script>

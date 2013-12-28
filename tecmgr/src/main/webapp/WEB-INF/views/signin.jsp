@@ -17,21 +17,26 @@
  </style>
 </head>
 <body>
-	<div style="width: 30%;height: auto;margin: 15% auto;">
+<div style="text-align: center;">
+<h6><font face="楷体" color="pink" >如有问题请及时联系信息中心 ！申老师   TEL：15536660688 小袁  QQ：2022593664 TEL：15619388806</font></h6>
+</div>
+
+	<div style="width: 30%;height:auto;margin: 5% auto;">
 	<div class="row">
-	<div class="large-12 columns">
-	<h1><font face="楷体" color="white">成成中学教档系统</font></h1>
+	<div class="large-12 columns" style="text-align: center;">
+	<h1><font face="楷体" color="white">太原成成中学</font></h1>
+	<h2><font face="楷体" color="white">教师成长记录系统</font></h2>
 	</div>
 	</div>
 		<form action="<%=request.getContextPath() %>/signin" method="post" name="signin">
 	        <font style="color: red;"><%=request.getAttribute("tips")==null?"": request.getAttribute("tips")%></font>
 	        <div class="row">
-	            <label class="label">教职工号</label>
-	            <input type="text" placeholder="请输入教职工号码" name="teacherid" id="teacherid" onchange="isExist(this.value)" value="<%= request.getParameter("teacherid")==null?"":request.getParameter("teacherid")%>">
+	            <label class="label">身份证号码</label>
+	            <input type="text" placeholder="请输入身份证号码" name="teacherid" id="teacherid" onchange="isExist(this.value)" value="<%= request.getParameter("teacherid")==null?"":request.getParameter("teacherid")%>">
 	        </div>
 	        <div class="row">
 	            <label class="label">密码</label>
-	            <input type="password" placeholder="请输入密码" name="password" id="p1">
+	            <input type="password" placeholder="请输入密码" name="password" id="p1" onkeydown="javascript: if(event.keyCode==13) sign();">
 	        </div>
 	        <div class="row">
 	            <a class="small button large-4 columns" onclick="sign()">登录</a>
@@ -40,13 +45,7 @@
 	        </div>
 	</form>
 </div>
-<div style="position: absolute;right: 20px;color: white;filter:alpha(opacity=0.5);font-size: 1px;opacity:0.1;" id="contact">
-<ul style="list-style: none;display: inline;">
-<li>咨询:袁子茜</li>
-<li>QQ:15619388806</li>
-<li>手机:15619388806</li>
-</ul>
-</div>
+
  <script src="<%=request.getContextPath() %>/resources/scripts/jquery-1.8.3.js"></script>
   <script type="text/javascript">var basepath="<%=request.getContextPath()%>";</script>
   <script src="<%=request.getContextPath() %>/resources/scripts/foundation.min.js"></script>
