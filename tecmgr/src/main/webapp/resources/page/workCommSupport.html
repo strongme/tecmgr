@@ -1,0 +1,78 @@
+ <div id="toggle">
+		<ul class="button-group">
+		  <li><a class="button tiny" id="switcher" title="点击切换">编辑</a></li>
+		</ul>
+</div>
+<ul class="breadcrumbs">
+  <li class="current"><a >个人成就</a></li>
+  <li class="current"><a>教师交流支教情况</a></li>
+</ul>
+<div id="edit">
+    <table>
+    	<tr>
+    		<th>时间</th>
+    		<th>原学校</th>
+    		<th>交流支教学校</th>
+    		<th>证明材料</th>
+    		<th>备注</th>
+    	</tr>
+    	<tbody>
+    		<tr data-ng-repeat="wcs in curWcsList">
+    			<td><input type="text" class="span2" value="{{wcs.time}}" id="time{{wcs.id}}"  data-ng-mouseover="initDatePickerSingle('time'+wcs.id)"></td>
+	            <td><input type="text"   data-ng-model="wcs.originalSch"></td>
+	            <td><input type="text"   data-ng-model="wcs.exchang"></td>
+	            <td><input type="text"   data-ng-model="wcs.proff"></td>
+	            <td><input type="text"   data-ng-model="wcs.remark"></td>
+    		</tr>
+    		  <tr >
+        	<td colspan="5"  class="inputAreaBnt">
+       				<a class="small button round large-12" data-ng-click="updateWorkCommSupport()">修改</a>
+        	</td>
+        </tr>
+    	</tbody>
+    	</table>
+    	<div class="inputAreaBnt">
+    	<table>
+    	<tr>
+    		<th>时间</th>
+    		<th>原学校</th>
+    		<th>交流支教学校</th>
+    		<th>证明材料</th>
+    		<th>备注</th>
+    	</tr>
+    	<tbody>
+    		<tr>
+    			<td><input type="text" class="span2" value="" id="time" ></td>
+	            <td><input type="text"   data-ng-model="newwcs.originalSch" placeholder="原学校"></td>
+	            <td><input type="text"   data-ng-model="newwcs.exchang" placeholder="交流支教学校"></td>
+	            <td><input type="text"   data-ng-model="newwcs.proff" placeholder="证明材料"></td>
+	            <td><input type="text"   data-ng-model="newwcs.remark" placeholder="备注"></td>
+    		</tr>
+    		<tr>
+	        	<td colspan="5">
+	        		<a class="small button round large-12" data-ng-click="saveWorkCommSupport()" data-ng-disabled="!newwcs.originalSch||!newwcs.exchang||!newwcs.proff||!newwcs.remark">添加</a>
+	        	</td>
+	        </tr>
+    	</tbody>
+    	</table>
+    	</div>
+</div><div id="preview">
+    <table>
+    	<tr>
+    		<th>时间</th>
+    		<th>原学校</th>
+    		<th>交流支教学校</th>
+    		<th>证明材料</th>
+    		<th>备注</th>
+    	</tr>
+    	<tbody>
+    		<tr data-ng-repeat="wcs in curWcsList">
+    			<td class="short">{{wcs.time}}</td>
+	            <td class="short">{{wcs.originalSch}}</td>
+	            <td class="short">{{wcs.exchang}}</td>
+	            <td class="short">{{wcs.proff}}</td>
+	            <td>{{wcs.remark}}</td>
+    		</tr>
+    	</tbody>
+    	</table>
+</div>

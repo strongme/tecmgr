@@ -1,0 +1,90 @@
+ <div id="toggle">
+		<ul class="button-group">
+		  <li><a class="button tiny" id="switcher" title="点击切换">编辑</a></li>
+		</ul>
+</div>
+<ul class="breadcrumbs">
+  <li class="current"><a >个人成就</a></li>
+  <li class="current"><a>参加教育教学课题研究情况</a></li>
+</ul>
+<div id="edit">
+     <table>
+    	<tr>
+    		<th>时间</th>
+    		<th>课题名称</th>
+    		<th>立项部门</th>
+    		<th>本人承担责任</th>
+    		<th>结题情况</th>
+    		<th>证明材料</th>
+    		<th>备注</th>
+    	</tr>
+    	<tbody>
+    		<tr data-ng-repeat="wtr in curWtrList">
+    			<td><input type="text" class="span2" value="{{wtr.time}}" id="time{{wtr.id}}"  data-ng-mouseover="initDatePickerSingle('time'+wtr.id)"></td>
+	            <td><input type="text"   data-ng-model="wtr.name"></td>
+	            <td><input type="text"   data-ng-model="wtr.org"></td>
+	            <td><input type="text"   data-ng-model="wtr.role"></td>
+	            <td><input type="text"   data-ng-model="wtr.finishedDetails"></td>
+	            <td><input type="text"   data-ng-model="wtr.proff"></td>
+	            <td><input type="text"   data-ng-model="wtr.remark"></td>
+    		</tr>
+    		<tr >
+        	<td colspan="7"  class="inputAreaBnt">
+       				<a class="small button round large-12" data-ng-click="updateWorkTeachResearch()">修改</a>
+        	</td>
+        </tr>
+    	</tbody>
+    	</table>
+    	<div class="inputAreaBnt">
+    		 <table>
+    	<tr>
+    		<th>时间</th>
+    		<th>课题名称</th>
+    		<th>立项部门</th>
+    		<th>本人承担责任</th>
+    		<th>结题情况</th>
+    		<th>证明材料</th>
+    		<th>备注</th>
+    	</tr>
+    	<tbody>
+    		<tr>
+    			<td><input type="text" class="span2" value="" id="time" ></td>
+	            <td><input type="text"   data-ng-model="newwtr.name" placeholder="课题名称"></td>
+	            <td><input type="text"   data-ng-model="newwtr.org" placeholder="立项部门"></td>
+	            <td><input type="text"   data-ng-model="newwtr.role" placeholder="本人承担任务"></td>
+	            <td><input type="text"   data-ng-model="newwtr.finishedDetails" placeholder="结题情况"></td>
+	            <td><input type="text"   data-ng-model="newwtr.proff" placeholder="证明材料"></td>
+	            <td><input type="text"   data-ng-model="newwtr.remark" placeholder="备注"></td>
+    		</tr>
+    		 <tr>
+	        	<td colspan="7">
+	        		<a class="small button round large-12" data-ng-click="saveWorkTeachResearch()" data-ng-disabled="!newwtr.name||!newwtr.org||!newwtr.role||!newwtr.finishedDetails||!newwtr.proff||!newwtr.remark">添加</a>
+	        	</td>
+	        </tr>
+    	</tbody>
+    	</table>
+    	</div>
+</div><div id="preview">
+  <table>
+    	<tr>
+    		<th>时间</th>
+    		<th>课题名称</th>
+    		<th>立项部门</th>
+    		<th>本人承担责任</th>
+    		<th>结题情况</th>
+    		<th>证明材料</th>
+    		<th>备注</th>
+    	</tr>
+    	<tbody>
+    		<tr data-ng-repeat="wtr in curWtrList">
+    			<td class="short">{{wtr.time}}</td>
+	            <td class="short">{{wtr.name}}</td>
+	            <td class="short">{{wtr.org}}</td>
+	            <td class="short">{{wtr.role}}</td>
+	            <td class="short">{{wtr.finishedDetails}}</td>
+	            <td class="short">{{wtr.proff}}</td>
+	            <td>{{wtr.remark}}</td>
+    		</tr>
+    	</tbody>
+    	</table>
+</div>

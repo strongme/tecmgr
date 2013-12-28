@@ -1,0 +1,84 @@
+ <div id="toggle">
+		<ul class="button-group">
+		  <li><a class="button tiny" id="switcher" title="点击切换">编辑</a></li>
+		</ul>
+</div>
+<ul class="breadcrumbs">
+  <li class="current"><a >个人成就</a></li>
+  <li class="current"><a>参加教学竞赛获奖情况</a></li>
+</ul>
+<div id="edit">
+      <table>
+    	<tr>
+    		<th>时间</th>
+    		<th>竞赛名称</th>
+    		<th>所获奖项</th>
+    		<th>组织单位</th>
+    		<th>证明材料</th>
+    		<th>备注</th>
+    	</tr>
+    	<tbody>
+    		<tr data-ng-repeat="wa in curWaList">
+    			<td><input type="text" class="span2" value="{{wa.time}}" id="time{{wa.id}}"  data-ng-mouseover="initDatePickerSingle('time'+wa.id)"></td>
+	            <td><input type="text"   data-ng-model="wa.name"></td>
+	            <td><input type="text"   data-ng-model="wa.award"></td>
+	            <td><input type="text"  data-ng-model="wa.org"></td>
+	            <td><input type="text"  data-ng-model="wa.proff"></td>
+	            <td><input type="text"   data-ng-model="wa.remark"></td>
+    		</tr>
+    		 <tr >
+        	<td colspan="6"  class="inputAreaBnt">
+       				<a class="small button round large-12" data-ng-click="updateWorkAward()">修改</a>
+        	</td>
+        </tr>
+    	</tbody>
+    	</table>
+    	<div class="inputAreaBnt">
+    		<table>
+	   		<tr>
+	    		<th>时间</th>
+	    		<th>竞赛名称</th>
+	    		<th>所获奖项</th>
+	    		<th>组织单位</th>
+	    		<th>证明材料</th>
+	    		<th>备注</th>
+	    	</tr>
+	    	<tbody>
+	    	<tr>
+	    		<td><input type="text" class="span2" value="" id="time" ></td>
+	            <td><input type="text" placeholder="竞赛名称"  data-ng-model="newwa.name"></td>
+	            <td><input type="text" placeholder="所获奖项"  data-ng-model="newwa.award"></td>
+	            <td><input type="text" placeholder="组织单位"  data-ng-model="newwa.org"></td>
+	            <td><input type="text" placeholder="证明材料"  data-ng-model="newwa.proff"></td>
+	            <td><input type="text" placeholder="备注"  data-ng-model="newwa.remark"></td>
+	            </tr>
+               <tr>
+	        	<td colspan="6">
+	        		<a class="small button round large-12" data-ng-click="saveWorkAward()" data-ng-disabled="!newwa.name||!newwa.award||!newwa.org||!newwa.proff||!newwa.remark">添加</a>
+	        	</td>
+	        </tr>
+	    	</tbody>
+	    	</table>
+    	</div>
+</div><div id="preview">
+  <table>
+    	<tr>
+    		<th>时间</th>
+    		<th>竞赛名称</th>
+    		<th>所获奖项</th>
+    		<th>组织单位</th>
+    		<th>证明材料</th>
+    		<th>备注</th>
+    	</tr>
+    	<tbody>
+    		<tr data-ng-repeat="wa in curWaList">
+    			<td class="short">{{wa.time}}</td>
+	            <td class="short">{{wa.name}}</td>
+	            <td class="short">{{wa.award}}</td>
+	            <td class="short">{{wa.org}}</td>
+	            <td class="short">{{wa.proff}}</td>
+	            <td>{{wa.remark}}</td>
+    		</tr>
+    	</tbody>
+    	</table>
+</div>

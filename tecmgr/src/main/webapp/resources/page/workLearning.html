@@ -1,0 +1,84 @@
+ <div id="toggle">
+		<ul class="button-group">
+		  <li><a class="button tiny" id="switcher" title="点击切换">编辑</a></li>
+		</ul>
+</div>
+<ul class="breadcrumbs">
+  <li class="current"><a >个人成就</a></li>
+  <li class="current"><a>青年教师（拜师学习）情况</a></li>
+</ul>
+<div id="edit">
+      <table>
+    	<tr>
+    		<th>时间</th>
+    		<th>师傅姓名</th>
+    		<th>学习情况</th>
+    		<th>取得成绩</th>
+    		<th>证明材料</th>
+    		<th>备注</th>
+    	</tr>
+    	<tbody>
+    		<tr data-ng-repeat="wl in curWlList">
+    			 <td><input type="text" class="span2" value="{{wl.time}}" id="time{{wl.id}}"  data-ng-mouseover="initDatePickerSingle('time'+wl.id)"></td>
+	            <td><input type="text"   data-ng-model="wl.name"></td>
+	            <td><input type="text"   data-ng-model="wl.guideInfo"></td>
+	            <td><input type="text"   data-ng-model="wl.award"></td>
+	            <td><input type="text"   data-ng-model="wl.proff"></td>
+	            <td><input type="text"   data-ng-model="wl.remark"></td>
+    		</tr>
+    		  <tr >
+        	<td colspan="6"  class="inputAreaBnt">
+       				<a class="small button round large-12" data-ng-click="updateWorkLearning()">修改</a>
+        	</td>
+        </tr>
+    	</tbody>
+    	</table>
+    	<div class="inputAreaBnt">
+    	   <table>
+    	<tr>
+    		<th>时间</th>
+    		<th>师傅姓名</th>
+    		<th>学习情况</th>
+    		<th>取得成绩</th>
+    		<th>证明材料</th>
+    		<th>备注</th>
+    	</tr>
+    	<tbody>
+    		<tr>
+    			<td><input type="text" class="span2" value="" id="time" ></td>
+	            <td><input type="text"   data-ng-model="newwl.name" placeholder="师傅姓名"></td>
+	            <td><input type="text"   data-ng-model="newwl.guideInfo" placeholder="学习情况"></td>
+	            <td><input type="text"   data-ng-model="newwl.award" placeholder="取得成绩"></td>
+	            <td><input type="text"   data-ng-model="newwl.proff" placeholder="证明材料"></td>
+	            <td><input type="text"   data-ng-model="newwl.remark" placeholder="备注"></td>
+    		</tr>
+    		   <tr>
+	        	<td colspan="6">
+	        		<a class="small button round large-12" data-ng-click="saveWorkLearning()" data-ng-disabled="!newwl.name||!newwl.guideInfo||!newwl.award||!newwl.proff||!newwl.remark">添加</a>
+	        	</td>
+	        </tr>
+    	</tbody>
+    	</table>
+    	</div>
+</div><div id="preview">
+   <table>
+    	<tr>
+    		<th>时间</th>
+    		<th>师傅姓名</th>
+    		<th>学习情况</th>
+    		<th>取得成绩</th>
+    		<th>证明材料</th>
+    		<th>备注</th>
+    	</tr>
+    	<tbody>
+    		<tr data-ng-repeat="wl in curWlList">
+    			 <td class="short">{{wl.time}}</td>
+	            <td class="short">{{wl.name}}</td>
+	            <td class="short">{{wl.guideInfo}}</td>
+	            <td class="short">{{wl.award}}</td>
+	            <td class="short">{{wl.proff}}</td>
+	            <td>{{wl.remark}}</td>
+    		</tr>
+    	</tbody>
+    	</table>
+</div>

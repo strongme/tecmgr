@@ -1,0 +1,78 @@
+ <div id="toggle">
+		<ul class="button-group">
+		  <li><a class="button tiny" id="switcher" title="点击切换">编辑</a></li>
+		</ul>
+</div>
+<ul class="breadcrumbs">
+  <li class="current"><a >个人成就</a></li>
+  <li class="current"><a>参加继续教育情况</a></li>
+</ul>
+<div id="edit">
+    <table>
+    	<tr>
+    		<th>时间</th>
+    		<th>内容成绩</th>
+    		<th>主办单位</th>
+    		<th>证明材料</th>
+    		<th>备注</th>
+    	</tr>
+    	<tbody>
+    		<tr data-ng-repeat="wcl in curWclList">
+    			<td><input type="text" class="span2" value="{{wcl.time}}" id="time{{wcl.id}}"  data-ng-mouseover="initDatePickerSingle('time'+wcl.id)"></td>
+	            <td><input type="text"   data-ng-model="wcl.contentAndScore"></td>
+	            <td><input type="text"   data-ng-model="wcl.org"></td>
+	            <td><input type="text"   data-ng-model="wcl.proff"></td>
+	            <td><input type="text"   data-ng-model="wcl.remark"></td>
+    		</tr>
+    		 <tr >
+        	<td colspan="5"  class="inputAreaBnt">
+       				<a class="small button round large-12" data-ng-click="updateWorkContinueLearn()">修改</a>
+        	</td>
+        </tr>
+    	</tbody>
+    	</table>
+    	<div class="inputAreaBnt">
+    		 <table>
+    	<tr>
+    		<th>时间</th>
+    		<th>内容成绩</th>
+    		<th>主办单位</th>
+    		<th>证明材料</th>
+    		<th>备注</th>
+    	</tr>
+    	<tbody>
+    		<tr>
+    			<td><input type="text" class="span2" value="" id="time" ></td>
+	            <td><input type="text"   data-ng-model="newwcl.contentAndScore" placeholder="内容成绩"></td>
+	            <td><input type="text"   data-ng-model="newwcl.org" placeholder="主办单位"></td>
+	            <td><input type="text"   data-ng-model="newwcl.proff" placeholder="证明材料"></td>
+	            <td><input type="text"   data-ng-model="newwcl.remark" placeholder="备注"></td>
+    		</tr>
+    		  <tr>
+	        	<td colspan="5">
+	        		<a class="small button round large-12" data-ng-click="saveWorkContinueLearn()" data-ng-disabled="!newwcl.contentAndScore||!newwcl.org||!newwcl.proff||!newwcl.remark">添加</a>
+	        	</td>
+	        </tr>
+    	</tbody>
+    	</table>
+    	</div>
+</div><div id="preview">
+<table>
+    	<tr>
+    		<th>时间</th>
+    		<th>内容成绩</th>
+    		<th>主办单位</th>
+    		<th>证明材料</th>
+    		<th>备注</th>
+    	</tr>
+    	<tbody>
+    		<tr data-ng-repeat="wcl in curWclList">
+    			<td class="short">{{wcl.time}}</td>
+	            <td class="short">{{wcl.contentAndScore}}</td>
+	            <td class="short">{{wcl.org}}</td>
+	            <td class="short">{{wcl.proff}}</td>
+	            <td>{{wcl.remark}}</td>
+    		</tr>
+    	</tbody>
+    	</table>
+</div>

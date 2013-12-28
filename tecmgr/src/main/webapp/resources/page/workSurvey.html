@@ -1,0 +1,78 @@
+ <div id="toggle">
+		<ul class="button-group">
+		  <li><a class="button tiny" id="switcher" title="点击切换">编辑</a></li>
+		</ul>
+</div>
+<ul class="breadcrumbs">
+  <li class="current"><a >个人成就</a></li>
+  <li class="current"><a>参加中（高）考或调研测试命题、督导视导、职称评定等工作情况</a></li>
+</ul>
+<div id="edit">
+  	 <table>
+    	<tr>
+    		<th>时间</th>
+    		<th>工作内容</th>
+    		<th>组织单位</th>
+    		<th>证明材料</th>
+    		<th>备注</th>
+    	</tr>
+    	<tbody>
+    		<tr data-ng-repeat="nw in curWsList">
+    			<td><input type="text" class="span2" value="{{nw.time}}" id="time{{nw.id}}"  data-ng-mouseover="initDatePickerSingle('time'+nw.id)"></td>
+	            <td><input type="text"   data-ng-model="nw.jobDetails"></td>
+	            <td><input type="text"   data-ng-model="nw.org"></td>
+	            <td><input type="text"   data-ng-model="nw.proff"></td>
+	            <td><input type="text"   data-ng-model="nw.remark"></td>
+    		</tr>
+    		<tr >
+        	<td colspan="5"  class="inputAreaBnt">
+       				<a class="small button round large-12" data-ng-click="updateWorkSurvey()">修改</a>
+        	</td>
+        </tr>
+    	</tbody>
+    	</table>
+    	<div class="inputAreaBnt">
+    		<table>
+	   		<tr>
+	   		<th>时间</th>
+    		<th>工作内容</th>
+    		<th>组织单位</th>
+    		<th>证明材料</th>
+    		<th>备注</th>
+	    	</tr>
+	    	<tbody>
+	    		<tr>
+		      		<td><input type="text" class="span2" value="" id="time"  ></td>
+		            <td><input type="text" placeholder="工作内容" data-ng-model="newws.jobDetails"></td>
+		            <td><input type="text" placeholder="组织单位" data-ng-model="newws.org"></td>
+		            <td><input type="text" placeholder="证明材料" data-ng-model="newws.proff"></td>
+		            <td><input type="text" placeholder="备注" data-ng-model="newws.remark"></td>
+	    		</tr>
+	    		<tr>
+	        	<td colspan="5">
+	        		<a class="small button round large-12" data-ng-click="saveWorkSurvey()" data-ng-disabled="!newws.jobDetails||!newws.org||!newws.proff||!newws.remark">添加</a>
+	        	</td>
+	        </tr>
+	    	</tbody>
+	    	</table>
+    	</div>
+</div><div id="preview">
+ <table>
+    	<tr>
+    		<th>时间</th>
+    		<th>工作内容</th>
+    		<th>组织单位</th>
+    		<th>证明材料</th>
+    		<th>备注</th>
+    	</tr>
+    	<tbody>
+    		<tr data-ng-repeat="nw in curWsList">
+    			<td class="short">{{nw.time}}</td>
+	            <td class="short">{{nw.jobDetails}}</td>
+	            <td class="short">{{nw.org}}</td>
+	            <td class="short">{{nw.proff}}</td>
+	            <td>{{nw.remark}}</td>
+    		</tr>
+		</tbody>
+		</table>
+</div>

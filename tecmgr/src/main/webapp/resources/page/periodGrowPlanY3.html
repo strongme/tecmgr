@@ -1,0 +1,149 @@
+ <div id="toggle">
+		<ul class="button-group">
+		  <li><a class="button tiny" id="switcher" title="点击切换">编辑</a></li>
+		</ul>
+</div>
+<ul class="breadcrumbs">
+  <li class="current"><a >成长规划</a></li>
+  <li class="current"><a>阶段成长计划-过程小结第三年</a></li>
+</ul>
+<div id="edit">
+<div class="row">
+	<div class="large-12 columns">
+		<label class="label">教学情况及反思</label>
+	</div>
+</div>
+<div class="row">
+	<div class="large-12 columns">
+		<textarea  data-ng-model="sl3.rethink"></textarea>
+	</div>
+</div>
+<div class="row">
+	<div class="large-12 columns">
+		<label class="label">课改实践</label>
+	</div>
+</div>
+<div class="row">
+	<div class="large-12 columns">
+		<textarea  data-ng-model="sl3.practice"></textarea>
+	</div>
+</div>
+<div class="row">
+	<div class="large-12 columns">
+		<label class="label">听、评课情况</label>
+	</div>
+</div>
+<div class="row">
+	<div class="large-12 columns">
+		<textarea  data-ng-model="sl3.learnEachOther"></textarea>
+	</div>
+</div>
+<div class="row">
+	<div class="large-12 columns">
+		<label class="label">开设校本科情况</label>
+	</div>
+</div>
+<div class="row">
+	<div class="large-12 columns">
+		<textarea  data-ng-model="sl3.schoolBasedEdu"></textarea>
+	</div>
+</div>
+<div class="row">
+	<div class="large-12 columns">
+		<label class="label">读书情况</label>
+	</div>
+</div>
+<div class="row">
+	<div class="large-12 columns">
+		<textarea  data-ng-model="sl3.reading"></textarea>
+	</div>
+</div>
+<div class="row">
+	<div class="large-12 columns">
+		<label class="label">班主任经历</label>
+	</div>
+</div>
+<div class="row">
+	<div class="large-12 columns">
+		<textarea  data-ng-model="sl3.classExperience"></textarea>
+	</div>
+</div>
+<div class="row">
+	<div class="large-12 columns">
+		<label class="label">家访</label>
+	</div>
+</div>
+<div class="row">
+	<div class="large-12 columns">
+		<textarea  data-ng-model="sl3.visitHome"></textarea>
+	</div>
+</div>
+<div class="row">
+	<div class="large-12 columns">
+		<label class="label">突出贡献</label>
+	</div>
+</div>
+<div class="row">
+	<div class="large-12 columns">
+		<textarea  data-ng-model="sl3.devote"></textarea>
+	</div>
+</div>
+<div class="row">
+	<div class="large-12 columns">
+		<label class="label">其他</label>
+	</div>
+</div>
+<div class="row">
+	<div class="large-12 columns">
+		<textarea  data-ng-model="sl3.remark"></textarea>
+	</div>
+</div>
+<div class="inputAreaBnt" >
+	<div class="row">
+		<div class="large-12 columns">
+			<a class="small button large-12" data-ng-click="saveSl3()"
+				data-ng-disabled="!sl3.rethink||!sl3.practice||!sl3.learnEachOther||!sl3.schoolBasedEdu||!sl3.reading||!sl3.classExperience||!sl3.visitHome||!sl3.devote||!sl3.remark">保存</a>
+		</div>
+	</div>
+</div>
+</div>
+<div id="preview">
+<table>
+    <tr>
+        <td class="labelname">教学情况及反思</td>
+        <td>{{sl3.rethink}}</td>
+    </tr>
+    <tr>
+        <td class="labelname">课改实践</td>
+        <td>{{sl3.practice}}</td>
+    </tr>
+    <tr>
+        <td class="labelname">听评课情况</td>
+        <td>{{sl3.learnEachOther}}</td>
+    </tr>
+    <tr>
+        <td class="labelname">开设校本科情况</td>
+        <td>{{sl3.schoolBasedEdu}}</td>
+    </tr>
+    <tr>
+        <td class="labelname">读书情况</td>
+        <td>{{sl3.reading}}</td>
+    </tr>
+    <tr>
+        <td class="labelname">班主任经历</td>
+        <td>{{sl3.classExperience}}</td>
+    </tr>
+    <tr>
+        <td class="labelname">家访</td>
+        <td>{{sl3.visitHome}}</td>
+    </tr>
+    <tr>
+        <td class="labelname">突出贡献</td>
+        <td>{{sl3.devote}}</td>
+    </tr>
+    <tr>
+        <td class="labelname">其他</td>
+        <td>{{sl3.remark}}</td>
+    </tr>
+</table>
+</div>

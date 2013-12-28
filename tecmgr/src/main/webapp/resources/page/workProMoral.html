@@ -1,0 +1,124 @@
+ <div id="toggle">
+		<ul class="button-group">
+		  <li><a class="button tiny" id="switcher" title="点击切换">编辑</a></li>
+		</ul>
+</div>
+<ul class="breadcrumbs">
+  <li class="current"><a >个人成就</a></li>
+  <li class="current"><a>教师职业道德行为情况</a></li>
+</ul>
+<div id="edit">
+     <table>
+    	<tr>
+    		<th>时间</th>
+    		<th>有偿家教</th>
+    		<th>体罚学生</th>
+    		<th>接受财务</th>
+    		<th>违规订资料</th>
+    		<th>备注</th>
+    	</tr>
+    	<tbody>
+	    	<tr data-ng-repeat="wpm in curWpmList">
+	    		<td><input type="text" class="span2" value="{{wpm.time}}" id="time{{wpm.id}}"  data-ng-mouseover="initDatePickerSingle('time'+wpm.id)"></td>
+            <td>
+            	 <select data-ng-model="wpm.famEdu" class="sellabel" >
+                    	<option value="1">是</option>
+                    	<option value="0">否</option>
+                    </select>
+            </td>
+            <td>
+            	 <select data-ng-model="wpm.phyPunishiment" class=" sellabel" >
+                    	<option value="1">是</option>
+                    	<option value="0">否</option>
+                    </select>
+            </td>
+            <td>
+            	 <select data-ng-model="wpm.financialRelation" class=" sellabel" >
+                    	<option value="1">是</option>
+                    	<option value="0">否</option>
+                    </select>
+            </td>
+            <td>
+            	 <select data-ng-model="wpm.reference" class=" sellabel" >
+                    	<option value="1">是</option>
+                    	<option value="0">否</option>
+                    </select>
+            </td>
+            <td><input type="text"   data-ng-model="wpm.remark"></td>
+	    	</tr>
+	    	 <tr >
+        	<td colspan="6"  class="inputAreaBnt">
+       				<a class="small button round large-12" data-ng-click="updateWorkCommSupport()">修改</a>
+        	</td>
+        </tr>
+   		</tbody>
+    	</table>
+    	<div class="inputAreaBnt">
+    		 <table>
+    	<tr>
+    		<th>时间</th>
+    		<th>有偿家教</th>
+    		<th>体罚学生</th>
+    		<th>接受财务</th>
+    		<th>违规订资料</th>
+    		<th>备注</th>
+    	</tr>
+    	<tbody>
+    		<tr>
+    			<td><input type="text" class="span2" value="" id="time" ></td>
+            <td>
+            	 <select data-ng-model="newwpm.famEdu" class=" sellabel" >
+                    	<option value="1">是</option>
+                    	<option value="0">否</option>
+                    </select>
+            </td>
+            <td>
+            	 <select data-ng-model="newwpm.phyPunishiment" class=" sellabel" >
+                    	<option value="1">是</option>
+                    	<option value="0">否</option>
+                    </select>
+            </td>
+            <td>
+            	 <select data-ng-model="newwpm.financialRelation" class=" sellabel" >
+                    	<option value="1">是</option>
+                    	<option value="0">否</option>
+                    </select>
+            </td>
+            <td>
+            	 <select data-ng-model="newwpm.reference" class=" sellabel" >
+                    	<option value="1">是</option>
+                    	<option value="0">否</option>
+                    </select>
+            </td>
+            <td><input type="text"   data-ng-model="newwpm.remark" placeholder="没有填无"></td>
+    		</tr>
+    		  <tr>
+	        	<td colspan="6">
+	        		<a class="small button round large-12" data-ng-click="saveWorkCommSupport()" data-ng-disabled="!newwpm.famEdu||!newwpm.phyPunishiment||!newwpm.financialRelation||!newwpm.reference||!newwpm.remark">添加</a>
+	        	</td>
+	        </tr>
+    	</tbody>
+    	</table>
+    	</div>
+</div><div id="preview">
+ <table>
+    	<tr>
+    		<th>时间</th>
+    		<th>有偿家教</th>
+    		<th>体罚学生</th>
+    		<th>接受财务</th>
+    		<th>违规订资料</th>
+    		<th>备注</th>
+    	</tr>
+    	<tbody>
+	    	<tr data-ng-repeat="wpm in curWpmList">
+	    		<td class="short">{{wpm.time}}</td>
+            <td class="short">{{handleSel(wpm.famEdu)}}</td>
+            <td class="short">{{handleSel(wpm.phyPunishiment)}}</td>
+            <td class="short">{{handleSel(wpm.financialRelation)}}</td>
+            <td class="short">{{handleSel(wpm.reference)}}</td>
+            <td>{{wpm.remark}}</td>
+	    	</tr>
+   		</tbody>
+    	</table>
+</div>

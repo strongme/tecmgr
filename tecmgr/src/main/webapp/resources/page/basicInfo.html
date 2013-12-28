@@ -1,0 +1,175 @@
+ <div id="toggle">
+		<ul class="button-group">
+		  <li><a class="button tiny" id="switcher" title="点击切换">编辑</a></li>
+		</ul>
+</div>
+<ul class="breadcrumbs">
+  <li class="current"><a >基本情况</a></li>
+  <li class="current"><a>基本信息</a></li>
+</ul>
+<div id="edit">
+    <div class="row">
+        <div class="large-10 columns">
+            <div class="row">
+                <div class="large-4 columns">
+                    <label class="label">教工编号</label>
+                    <input type="text" placeholder="教工编号"  data-ng-model="cur.teacherId">
+                </div>
+                <div class="large-4 columns">
+                    <label class="label">性别</label>
+                    <select data-ng-model="cur.gender" class="" id="gender">
+                    	<option value="-1">请选择性别</option>
+                    	<option value="1">男</option>
+                    	<option value="0">女</option>
+                    </select>
+                    <!-- <input type="text" id="gender" data-ng-model="cur.gender" readonly data-ng-change="onchange()"> -->
+                </div>
+                <div class="large-4 columns">
+                    <label class="label">籍贯</label>
+                    <input type="text" placeholder="籍贯"  data-ng-model="cur.native_">
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-4 columns">
+                    <label class="label">出生年月</label>
+					<input type="text" class="span2" value="" id="birth"   placeholder="请选择出生日期">
+                </div>
+                <div class="large-4 columns">
+                    <label class="label">民族</label>
+                    <input type="text" placeholder="民族"  data-ng-model="cur.nation">
+                </div>
+                <div class="large-4 columns">
+                    <label class="label">政治面貌</label>
+                    <input type="text" placeholder="政治面貌"  data-ng-model="cur.politicsStatus">
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-6 columns">
+                    <label class="label">学科专业</label>
+                    <input type="text" placeholder="学科专业"  data-ng-model="cur.subject">
+                </div>
+                <div class="large-6 columns">
+                    <label class="label">最高学历</label>
+                    <input type="text" placeholder="最高学历"  data-ng-model="cur.highestDegree">  
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-6 columns">
+                    <label class="label">职称</label>
+                    <input type="text" placeholder="职称"  data-ng-model="cur.professionalTitle">
+                </div>
+                <div class="large-6 columns">
+                    <label class="label">职务</label>
+                    <input type="text" placeholder="职务"  data-ng-model="cur.position">
+                </div>
+            </div>
+        </div>
+        <div class="large-2 columns">
+             <input type="text"   data-ng-model="cur.photo" value="照片暂无" placeholder="照片暂无"  readonly>
+        </div>
+    </div>
+
+    <div class="row">
+         <div class="large-3 columns">
+             <label class="label">联系电话</label>
+             <input type="text" placeholder="联系电话"  data-ng-model="cur.phone">
+         </div>
+         <div class="large-3 columns">
+             <label class="label">邮箱</label>
+             <input type="text" placeholder="邮箱"  data-ng-model="cur.email">
+         </div>
+         <div class="large-3 columns">
+             <label class="label">QQ号</label>
+             <input type="text" placeholder="QQ号码" data-ng-model="cur.qq">
+         </div>
+        <div class="large-3 columns">
+            <label class="label">所在单位</label>
+            <input type="text" placeholder="所在单位"  data-ng-model="cur.departmentName" >
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-12 columns">
+            <label class="label">特长/才艺</label>
+            <textarea  data-ng-model="cur.talent"></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-12 columns">
+            <label class="label">其他情况</label>
+            <textarea  data-ng-model="cur.remark2"></textarea>
+        </div>
+    </div>
+         <div class="row">
+        <div class="large-12 columns">
+            <label class="label large-12">表彰奖励或荣誉称号情况</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-12 columns">
+            <textarea  data-ng-model="curHonour.honourDetail"></textarea>
+        </div>
+    </div>
+      <div class="inputAreaBnt"> 
+        <div class="row">
+        	<div class="large-12 columns">
+        	<a class="small button large-12" data-ng-click="saveBasicInfo()" data-ng-disabled="!cur.teacherId||!cur.native_||!cur.nation||!cur.politicsStatus||!cur.subject||!cur.highestDegree||!cur.professionalTitle||!cur.position||!cur.photo||!cur.phone||!cur.qq||!cur.email||!cur.departmentName||!cur.talent||!cur.remark2||!curHonour.honourDetail">保存</a>
+        	</div>
+        </div>
+      </div> 
+ </div>     
+      <!-- preview area -->
+<div id="preview">
+	<table>
+    <tr>
+        <td class="labelname">编号</td>
+        <td class="short">{{cur.teacherId}}</td>
+        <td class="labelname">性别</td>
+        <td class="short">{{handleGender(cur.gender)}}</td>
+        <td class="labelname">籍贯</td>
+        <td class="short">{{cur.native_}}</td>
+        <td rowspan="4" class="labelname">{{cur.photo}}</td>
+    </tr>
+    <tr>
+        <td class="labelname">出生年月</td>
+        <td class="short">{{cur.birth}}</td>
+        <td class="labelname">民族</td>
+        <td class="short">{{cur.nation}}</td>
+        <td class="labelname">政治面貌</td>
+        <td class="short">{{cur.politicsStatus}}</td>
+    </tr>
+    <tr>
+        <td class="labelname">学科专业</td>
+        <td colspan="2" class="short">{{cur.subject}}</td>
+        <td class="labelname">最高学历</td>
+        <td colspan="2" class="short">{{cur.highestDegree}}</td>
+    </tr>
+    <tr>
+        <td class="labelname">职称</td>
+        <td colspan="2" class="short">{{cur.professionalTitle}}</td>
+        <td class="labelname">职务</td>
+        <td colspan="2" class="short">{{cur.position}}</td>
+    </tr>
+     <tr>
+         <td class="labelname">联系电话</td>
+         <td class="short">{{cur.phone}}</td>
+         <td class="labelname">邮箱/QQ号</td>
+         <td class="short">{{cur.email}}/{{cur.qq}}</td>
+         <td class="labelname">所在单位</td>
+         <td colspan="2" class="short">{{cur.departmentName}}</td>
+     </tr>
+     <tr>
+         <td class="labelname">特长/才艺</td>
+         <td colspan="6">{{cur.talent}}</td>
+     </tr>
+    <tr>
+        <td class="labelname">其他情况</td>
+        <td colspan="6"><p>{{cur.remark2}}</p></td>
+    </tr>
+    <tr>
+        <td class="labelname">表彰奖励/荣誉称号情况</td>
+        <td colspan="6" ><p>{{curHonour.honourDetail}}</p></td>
+    </tr>
+</table>
+</div>
+
+

@@ -1,0 +1,84 @@
+ <div id="toggle">
+		<ul class="button-group">
+		  <li><a class="button tiny" id="switcher" title="点击切换">编辑</a></li>
+		</ul>
+</div>
+<ul class="breadcrumbs">
+  <li class="current"><a >个人成就</a></li>
+  <li class="current"><a>发表论文论著教材编写情况</a></li>
+</ul>
+<div id="edit">
+	   <table>
+    	<tr>
+    		<th>时间</th>
+    		<th>文著名称|教材名称</th>
+    		<th>承担部分</th>
+    		<th>出版发表获奖|交流情况</th>
+    		<th>证明材料</th>
+    		<th>备注</th>
+    	</tr>
+    	<tbody>
+    		<tr data-ng-repeat="wbw in curWbwList">
+    			<td><input type="text" class="span2" value="{{wbw.time}}" id="time{{wbw.id}}"  data-ng-mouseover="initDatePickerSingle('time'+wbw.id)"></td>
+	            <td><input type="text"   data-ng-model="wbw.name"></td>
+	            <td><input type="text"   data-ng-model="wbw.role"></td>
+	            <td><input type="text"   data-ng-model="wbw.publicAndHonour"></td>
+	            <td><input type="text"   data-ng-model="wbw.proff"></td>
+	            <td><input type="text"   data-ng-model="wbw.remark"></td>
+    		</tr>
+    		 <tr >
+	        	<td colspan="6"  class="inputAreaBnt">
+	       				<a class="small button round large-12" data-ng-click="updateWorkBookWrite()">修改</a>
+	        	</td>
+	        </tr>
+    	</tbody>
+    	</table>
+    	<div class="inputAreaBnt">
+   		 <table>
+    	<tr>
+    		<th>时间</th>
+    		<th>文著名称|教材名称</th>
+    		<th>承担部分</th>
+    		<th>出版发表获奖|交流情况</th>
+    		<th>证明材料</th>
+    		<th>备注</th>
+    	</tr>
+    	<tbody>
+    		<tr>
+    			<td><input type="text" class="span2" value="" id="time" ></td>
+	            <td><input type="text"   data-ng-model="newwbw.name" placeholder="书籍名称"></td>
+	            <td><input type="text"   data-ng-model="newwbw.role" placeholder="承担部分"></td>
+	            <td><input type="text"   data-ng-model="newwbw.publicAndHonour" placeholder="基本情况"></td>
+	            <td><input type="text"   data-ng-model="newwbw.proff" placeholder="证明材料"></td>
+	            <td><input type="text"   data-ng-model="newwbw.remark" placeholder="备注"></td>
+    		</tr>
+    		 <tr>
+	        	<td colspan="6">
+	        		        	<a class="small button round large-12" data-ng-click="saveWorkBookWrite()" data-ng-disabled="!newwbw.name||!newwbw.role||!newwbw.publicAndHonour||!newwbw.proff||!newwbw.remark">添加</a>
+	        	</td>
+	        </tr>
+    	</tbody>
+    	</table>
+    	</div>
+</div><div id="preview">
+  <table>
+    	<tr>
+    		<th>时间</th>
+    		<th>文著名称|教材名称</th>
+    		<th>承担部分</th>
+    		<th>出版发表获奖|交流情况</th>
+    		<th>证明材料</th>
+    		<th>备注</th>
+    	</tr>
+    	<tbody>
+    		<tr data-ng-repeat="wbw in curWbwList">
+    			<td class="short">{{wbw.time}}</td>
+	            <td class="short">{{wbw.name}}</td>
+	            <td class="short">{{wbw.role}}</td>
+	            <td class="short">{{wbw.publicAndHonour}}</td>
+	            <td class="short">{{wbw.proff}}</td>
+	            <td>{{wbw.remark}}</td>
+    		</tr>
+    	</tbody>
+    	</table>
+</div>

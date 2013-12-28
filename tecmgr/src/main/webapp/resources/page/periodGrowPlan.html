@@ -1,0 +1,117 @@
+ <div id="toggle">
+		<ul class="button-group">
+		  <li><a class="button tiny" id="switcher" title="点击切换">编辑</a></li>
+		</ul>
+</div>
+<ul class="breadcrumbs">
+  <li class="current"><a >成长规划</a></li>
+  <li class="current"><a>阶段成长计划【第一个阶段性（三年）规划与总结】</a></li>
+</ul>
+<div id="edit">
+	<div class="row">
+		<div class="large-6 columns">
+			<label class="label">教工编号</label> <input type="text"
+				placeholder="教工编号"  data-ng-model="cur.teacherId">
+		</div>
+		<div class="large-6 columns">
+			<label class="label">时间</label> <input type="text"
+				placeholder="时间段如：2013-2016"  data-ng-model="cur.timeZone">
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-12 columns">
+			<label class="label">成长规划</label>
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-12 columns">
+			<textarea  data-ng-model="cur.growPlan"></textarea>
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-12 columns">
+			<label class="label large-12">三年自我检测</label>
+		</div>
+	</div>
+	<br/>
+	<div class="row">
+		<div class="large-12 columns">
+			<label class="label">达到的目标</label>
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-12 columns">
+			<textarea  data-ng-model="cur.selfCheckRealized" placeholder="达到的目标"></textarea>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="large-12 columns">
+			<label class="label">未达到的目标</label>
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-12 columns">
+			<textarea  data-ng-model="cur.selfCheckUnrealized" placeholder="未达到的目标"></textarea>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="large-12 columns">
+			<label class="label">目标修订</label>
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-12 columns">
+			<textarea  data-ng-model="cur.goalRevise"></textarea>
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-12 columns">
+			<label class="label">备注</label>
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-12 columns">
+			<textarea  data-ng-model="cur.remark"></textarea>
+		</div>
+	</div>
+	<div class="inputAreaBnt">
+		<div class="row">
+			<div class="large-12 columns">
+				<a class="small button large-12" data-ng-click="savePeriodPlan()"
+					data-ng-disabled="!cur.timeZone||!cur.growPlan||!cur.selfCheckRealized||!cur.selfCheckUnrealized||!cur.goalRevise||!cur.remark">保存</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="preview">
+<table>
+    <tr>
+        <td class="labelname">教职工编号</td>
+        <td class="short">{{cur.teacherId}}</td>
+        <td class="labelname">时间</td>
+        <td class="short">{{cur.timeZone}}</td>
+    </tr>
+    <tr>
+        <td class="labelname">成长规划</td>
+         <td colspan="3">{{cur.growPlan}}</td>
+    </tr>
+    <tr>
+        <td class="labelname">达到的目标</td>
+        <td colspan="3">{{cur.selfCheckRealized}}</td>
+    </tr>
+    <tr>
+        <td class="labelname">未达到的目标</td>
+        <td colspan="3">{{cur.selfCheckUnrealized}}</td>
+    </tr>
+    <tr>
+        <td class="labelname">目标修订</td>
+        <td colspan="3">{{cur.goalRevise}}</td>
+    </tr>
+    <tr>
+        <td class="labelname">备注</td>
+        <td colspan="3">{{cur.remark}}</td>
+    </tr>
+</table>
+</div>

@@ -1,0 +1,108 @@
+ <div id="toggle">
+		<ul class="button-group">
+		  <li><a class="button tiny" id="switcher" title="点击切换">编辑</a></li>
+		</ul>
+</div>
+<ul class="breadcrumbs">
+  <li class="current"><a >成长规划</a></li>
+  <li class="current"><a>总体成长规划</a></li>
+</ul>
+<div id="edit">
+    <div class="row">
+        <div class="large-6 columns">
+            <label class="label">教工编号</label>
+            <input type="text" placeholder="教工编号"  data-ng-model="cur.teacherId">
+        </div>
+        <div class="large-6 columns">
+            <label class="label">时间</label>
+           <input type="text" class="span2" value="" id="pt" >
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-12 columns">
+            <label class="label">我的教学理念</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-12 columns">
+            <textarea  data-ng-model="cur.eduIdea"></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-12 columns">
+            <label class="label">优势分析</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-12 columns">
+            <textarea  data-ng-model="cur.advanced"></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-12 columns">
+            <label class="label">不足分析</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-12 columns">
+            <textarea  data-ng-model="cur.disadvanced"></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-12 columns">
+            <label class="label">我的成长规划</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-12 columns">
+            <textarea  data-ng-model="cur.planDetail"></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-12 columns">
+            <label class="label">备注</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-12 columns">
+            <textarea  data-ng-model="cur.remark"></textarea>
+        </div>
+    </div>
+     <div class="inputAreaBnt" > 
+        <div class="row">
+        	<div class="large-12 columns">
+        	<a class="small button large-12" data-ng-click="saveWholePlan()" data-ng-disabled="!cur.eduIdea||!cur.remark||!cur.disadvanced||!cur.advanced||!cur.planDetail">保存</a>
+        	</div>
+        </div>
+      </div>
+      </div>
+<div id="preview">
+<table>
+    <tr>
+        <td class="labelname">教职工编号</td>
+        <td class="short">{{cur.teacherId}}</td>
+        <td class="labelname">时间</td>
+        <td class="short">{{cur.planTime}}</td>
+    </tr>
+    <tr>
+        <td class="labelname">我的教学理念</td>
+        <td colspan="3">{{cur.eduIdea}}</td>
+    </tr>
+    <tr>
+        <td class="labelname">优势分析</td>
+        <td colspan="3">{{cur.advanced}}</td>
+    </tr>
+    <tr>
+        <td class="labelname">不足分析</td>
+        <td colspan="3">{{cur.disadvanced}}</td>
+    </tr>
+    <tr>
+        <td class="labelname">我的成长规划</td>
+        <td colspan="3">{{cur.planDetail}}</td>
+    </tr>
+    <tr>
+        <td class="labelname">备注</td>
+        <td colspan="3">{{cur.remark}}</td>
+    </tr>
+</table>
+</div>

@@ -1,0 +1,80 @@
+ <div id="toggle">
+		<ul class="button-group">
+		  <li><a class="button tiny" id="switcher" title="点击切换">编辑</a></li>
+		</ul>
+</div>
+<ul class="breadcrumbs">
+  <li class="current"><a >基本情况</a></li>
+  <li class="current"><a>个人简历</a></li>
+</ul>
+<div id="edit">
+    <table>
+    	<tr>
+    		<th>起始年月</th>
+    		<th>终止年月</th>
+    		<th>单位|部门</th>
+    		<th>职务|职称</th>
+    		<th>备注</th>
+    	</tr>
+    	<tbody >
+        <tr data-ng-repeat="we in curExpList">
+            <td><input type="text" class="span2" value="{{we.startTime}}" id="s{{we.id}}"   data-ng-mouseover="initDatePickerSingle('s'+we.id)"></td>
+            <td><input type="text"  class="span2" value="{{we.endTime}}"  id="e{{we.id}}"  data-ng-mouseover="initDatePickerSingle('e'+we.id)"></td>
+            <td><input type="text"   data-ng-model="we.uintOrDepartment"></td>
+            <td><input type="text"   data-ng-model="we.postOrProtitle"></td>
+            <td><input type="text"   data-ng-model="we.remark3"></td>
+        </tr>
+	   <tr >
+        	<td colspan="5"  class="inputAreaBnt">
+       				<a data-ng-click="updateWorkExp()" class="small button round large-12">修改</a>
+        	</td>
+        </tr>
+    	</tbody>
+    	</table>
+    	<div class="inputAreaBnt">
+    	<table>
+	   		<tr>
+	    		<th>起始年月</th>
+	    		<th>终止年月</th>
+	    		<th>单位|部门</th>
+	    		<th>职务|职称</th>
+	    		<th>备注</th>
+	    	</tr>
+    	<tbody>
+	      <tr >
+	      		<input type="hidden" data-ng-model="curExp.teacherid">
+	      		<td><input type="text" class="span2" value="" id="start"   placeholder="起始日期"></td>
+	            <td><input type="text" class="span2" value="" id="end"   placeholder="结束日期"></td>
+	            <td><input type="text" placeholder="单位、部门" data-ng-model="curExp.uintOrDepartment"></td>
+	            <td><input type="text" placeholder="任何职务、职称" data-ng-model="curExp.postOrProtitle"></td>
+	            <td><input type="text" placeholder="备注" data-ng-model="curExp.remark3"></td>
+	        </tr>
+	        <tr>
+	        	<td colspan="5">
+	        		<a class="small button round large-12" data-ng-click="saveWorkExp()" data-ng-disabled="!curExp.uintOrDepartment||!curExp.postOrProtitle||!curExp.remark3">添加</a>
+	        	</td>
+	        </tr>
+	        </tbody>
+    </table>
+    </div>
+    </div>
+<div id="preview">
+<table>
+    <tr>
+        <th>起始年月</th>
+        <th>终止年月</th>
+        <th>单位部门</th>
+        <th>职务职称</th>
+        <th>备注</th>
+    </tr>
+    <tbody>
+        <tr data-ng-repeat="we in curExpList">
+            <td class="short">{{we.startTime}}</td>
+            <td class="short">{{we.endTime}}</td>
+            <td class="short">{{we.uintOrDepartment}}</td>
+            <td class="short">{{we.postOrProtitle}}</td>
+            <td class="short">{{we.remark3}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>
