@@ -18,10 +18,11 @@
 </head>
 <body>
 <div style="text-align: center;">
-<h6><font face="楷体" color="pink" >如有问题请及时联系信息中心 ！申老师   TEL：15536660688 小袁  QQ：2022593664 TEL：15619388806</font></h6>
+<h6><font face="楷体" color="pink" >如有问题请先查看<a target="_blank" href="<%=request.getContextPath()%>/resources/page/help.htm" style="color:red;text-decoration: underline;">帮助文档</a></font></h6>
+
 </div>
 
-	<div style="width: 30%;height:auto;margin: 5% auto;">
+	<div style="width: 30%;height:auto;margin: 9% auto;">
 	<div class="row">
 	<div class="large-12 columns" style="text-align: center;">
 	<h1><font face="楷体" color="white">太原成成中学</font></h1>
@@ -45,7 +46,9 @@
 	        </div>
 	</form>
 </div>
-
+<div style="text-align: center;">
+<h6><font face="楷体" color="pink" >如果还有问题无法解决请及时联系信息中心 ！申老师   TEL：15536660688 小袁  QQ：2022593664 TEL：15619388806</font></h6>
+ </div>
  <script src="<%=request.getContextPath() %>/resources/scripts/jquery-1.8.3.js"></script>
   <script type="text/javascript">var basepath="<%=request.getContextPath()%>";</script>
   <script src="<%=request.getContextPath() %>/resources/scripts/foundation.min.js"></script>
