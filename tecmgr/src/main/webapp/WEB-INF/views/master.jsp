@@ -31,7 +31,7 @@
     	 	 <nav class="top-bar fixed" data-topbar>
             <ul class="title-area">
                 <li class="name">
-                    <h1><a>太原成成中学『教师档案管理页』</a></h1>
+                    <h1><a>太原成成中学『教师成长记录系统管理页』</a></h1>
                 </li>
             </ul>
             <section class="top-bar-section">
