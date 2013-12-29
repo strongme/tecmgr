@@ -39,7 +39,7 @@
 	            <select name="departmentname" id="departmentname">
 	            </select>
 	        </div>
-	        <h5><font face="楷体" color="red" >注册成功无法修改，请牢记您的身份证号和密码！</font></h5>
+	        <h5><font face="楷体" color="red" >注册成功无法修改，请正确输入您的身份证号码！</font></h5>
 	        <div class="row">
 	            <a class="small button large-4 columns" onclick="sign()">注册</a>
 	            <a class="small button large-4 columns" onclick="reset()">清空</a>

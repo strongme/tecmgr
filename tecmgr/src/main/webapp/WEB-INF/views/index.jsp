@@ -6,7 +6,7 @@
 <head>
 	<meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>教师档案</title>
+  <title>教师成长记录袋</title>
   <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/foundation.css">
   <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/foundation-datepicker.css">
   <script src="<%=request.getContextPath() %>/resources/vendor/custom.modernizr.js"></script>
@@ -60,7 +60,7 @@
    	 <nav class="top-bar fixed" data-topbar>
             <ul class="title-area">
                 <li class="name">
-                    <h1><a>太原成成中学『教师档案』</a></h1>
+                    <h1><a>太原成成中学『教师成长记录袋』</a></h1>
                 </li>
             </ul>
             <section class="top-bar-section">
