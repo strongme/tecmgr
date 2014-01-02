@@ -18,7 +18,7 @@
 </head>
 <body>
 <div style="text-align: center;">
-<h6><font face="楷体" color="pink" >如有问题请先查看<a target="_blank" href="<%=request.getContextPath()%>/resources/page/help.htm" style="color:red;text-decoration: underline;">帮助文档</a></font></h6>
+<h6><font face="楷体" color="pink" >如有问题请先查看<a target="_blank" href="<%=request.getContextPath()%>/resources/page/help.htm" style="color:red;text-decoration: underline;">使用说明</a></font></h6>
 
 </div>
 

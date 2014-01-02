@@ -51,8 +51,8 @@
 			                <input type="text" placeholder="姓名" data-ng-model="q.name">
 			            </div>
 			            <div class="large-3 columns">
-			                <label class="label">教工编号</label>
-			                <input type="text" placeholder="教工编号" data-ng-model="q.teacherid">
+			                <label class="label">身份证号码</label>
+			                <input type="text" placeholder="身份证号码" data-ng-model="q.teacherid">
 			            </div>
 			            <div class="large-3 columns">
 			                <label class="label">政治面貌</label>
@@ -74,7 +74,7 @@
 			            </div>
 			             <div class="large-4 columns">
 			                <label class="label">部门名称</label>
-			                <input type="text" placeholder="所在单位" data-ng-model="q.department">
+			                <input type="text" placeholder="如：语文组等" data-ng-model="q.department">
 			            </div>
 			        </div>
 			        <div class="row">
@@ -90,7 +90,7 @@
 			<div class="large-12 columns">
 				<table style="width: 100%;">
 		     			<tr>
-		     				<th>教职工编号</th>
+		     				<th>身份证号码</th>
 		     				<th>部门名称</th>
 		     				<th>教师名称</th>
 		     				<th>建档日期</th>
