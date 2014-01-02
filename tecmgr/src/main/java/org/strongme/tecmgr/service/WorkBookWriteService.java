@@ -33,7 +33,7 @@ public class WorkBookWriteService {
 			protected void setValues(PreparedStatement ps, LobCreator lc)
 					throws SQLException, DataAccessException {
 				ps.setString(1, tmp.getTeacherid());
-				ps.setDate(2, new java.sql.Date(tmp.getTime().getTime()));
+				ps.setString(2, tmp.getTime());
 				ps.setString(3, tmp.getName());
 				ps.setString(4, tmp.getRole());
 				ps.setString(5, tmp.getPublicAndHonour());
@@ -55,7 +55,7 @@ public class WorkBookWriteService {
 		result = jdbcTemplate.execute(sql, new AbstractLobCreatingPreparedStatementCallback(this.lobHandler) {
 			protected void setValues(PreparedStatement ps, LobCreator lc)
 					throws SQLException, DataAccessException {
-				ps.setDate(1, new java.sql.Date(tmp.getTime().getTime()));
+				ps.setString(1, tmp.getTime());
 				ps.setString(2, tmp.getName());
 				ps.setString(3, tmp.getRole());
 				ps.setString(4, tmp.getPublicAndHonour());
@@ -77,7 +77,7 @@ public class WorkBookWriteService {
 				WorkBookWriteBean result = new WorkBookWriteBean();
 				result.setId(arg0.getInt(1));
 				result.setTeacherid(arg0.getString(2));
-				result.setTime(arg0.getDate(3));
+				result.setTime(arg0.getString(3));
 				result.setName(arg0.getString(4));
 				result.setRole(arg0.getString(5));
 				result.setPublicAndHonour(arg0.getString(6));

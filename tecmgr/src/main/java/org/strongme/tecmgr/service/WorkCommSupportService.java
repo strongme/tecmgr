@@ -33,7 +33,7 @@ public class WorkCommSupportService {
 			protected void setValues(PreparedStatement ps, LobCreator lc)
 					throws SQLException, DataAccessException {
 				ps.setString(1, tmp.getTeacherid());
-				ps.setDate(2, new java.sql.Date(tmp.getTime().getTime()));
+				ps.setString(2, tmp.getTime());
 				ps.setString(3, tmp.getOriginalSch());
 				ps.setString(4, tmp.getExchang());
 				ps.setString(5, tmp.getProff());
@@ -54,7 +54,7 @@ public class WorkCommSupportService {
 		result = jdbcTemplate.execute(sql, new AbstractLobCreatingPreparedStatementCallback(this.lobHandler) {
 			protected void setValues(PreparedStatement ps, LobCreator lc)
 					throws SQLException, DataAccessException {
-				ps.setDate(1, new java.sql.Date(tmp.getTime().getTime()));
+				ps.setString(1, tmp.getTime());
 				ps.setString(2, tmp.getOriginalSch());
 				ps.setString(3, tmp.getExchang());
 				ps.setString(4, tmp.getProff());
@@ -75,7 +75,7 @@ public class WorkCommSupportService {
 				WorkCommSupportBean result = new WorkCommSupportBean();
 				result.setId(arg0.getInt(1));
 				result.setTeacherid(arg0.getString(2));
-				result.setTime(arg0.getDate(3));
+				result.setTime(arg0.getString(3));
 				result.setOriginalSch(arg0.getString(4));
 				result.setExchang(arg0.getString(5));
 				result.setProff(arg0.getString(6));

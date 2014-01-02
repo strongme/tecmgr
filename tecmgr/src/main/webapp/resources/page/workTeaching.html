@@ -19,7 +19,7 @@
     	</tr>
     	<tbody>
     		<tr data-ng-repeat="wt in curWtList">
-    			 <td><input type="text" class="span2" value="{{wt.time}}" id="time{{wt.id}}"  data-ng-mouseover="initDatePickerSingle('time'+wt.id)"></td>
+    			 <td><input type="text" data-ng-model="wt.time"></td>
 	            <td><input type="text"   data-ng-model="wt.stunum"></td>
 	            <td><input type="text"   data-ng-model="wt.learnGuide"></td>
 	            <td><input type="text"   data-ng-model="wt.honour"></td>
@@ -45,7 +45,7 @@
     		</tr>
     		<tbody>
     			<tr>
-    				<td><input type="text" class="span2" value="" id="time" ></td>
+    				<td><input type="text" data-ng-model="newwt.time"></td>
 		            <td><input type="text"   data-ng-model="newwt.stunum" placeholder="请填写数字"></td>
 		            <td><input type="text"   data-ng-model="newwt.learnGuide" placeholder="指导情况"></td>
 		            <td><input type="text"   data-ng-model="newwt.honour" placeholder="获奖情况"></td>
@@ -54,7 +54,7 @@
     			</tr>
     			<tr>
     				<td colspan="6">
-	        			<a class="small button round large-12" data-ng-click="saveWorkTeaching()" data-ng-disabled="!newwt.stunum||!newwt.learnGuide||!newwt.honour||!newwt.proff||!newwt.remark">添加</a>
+	        			<a class="small button round large-12" data-ng-click="saveWorkTeaching()" data-ng-disabled="!newwt.stunum||!newwt.learnGuide||!newwt.time||!newwt.honour||!newwt.proff||!newwt.remark">添加</a>
 	        		</td>
     			</tr>
     		</tbody>

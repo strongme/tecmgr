@@ -18,7 +18,7 @@
     	</tr>
     	<tbody>
     		<tr data-ng-repeat="wcs in curWcsList">
-    			<td><input type="text" class="span2" value="{{wcs.time}}" id="time{{wcs.id}}"  data-ng-mouseover="initDatePickerSingle('time'+wcs.id)"></td>
+    			<td><input type="text"data-ng-model="wcs.time"></td>
 	            <td><input type="text"   data-ng-model="wcs.originalSch"></td>
 	            <td><input type="text"   data-ng-model="wcs.exchang"></td>
 	            <td><input type="text"   data-ng-model="wcs.proff"></td>
@@ -42,7 +42,7 @@
     	</tr>
     	<tbody>
     		<tr>
-    			<td><input type="text" class="span2" value="" id="time" ></td>
+    			<td><input type="text" data-ng-model="newwcs.time"></td>
 	            <td><input type="text"   data-ng-model="newwcs.originalSch" placeholder="原学校"></td>
 	            <td><input type="text"   data-ng-model="newwcs.exchang" placeholder="交流支教学校"></td>
 	            <td><input type="text"   data-ng-model="newwcs.proff" placeholder="填写材料类别，如证书等"></td>
@@ -50,7 +50,7 @@
     		</tr>
     		<tr>
 	        	<td colspan="5">
-	        		<a class="small button round large-12" data-ng-click="saveWorkCommSupport()" data-ng-disabled="!newwcs.originalSch||!newwcs.exchang||!newwcs.proff||!newwcs.remark">添加</a>
+	        		<a class="small button round large-12" data-ng-click="saveWorkCommSupport()" data-ng-disabled="!newwcs.originalSch||!newwcs.time||!newwcs.exchang||!newwcs.proff||!newwcs.remark">添加</a>
 	        	</td>
 	        </tr>
     	</tbody>

@@ -33,8 +33,8 @@ public class WorkExperienceService {
 			protected void setValues(PreparedStatement ps, LobCreator lc)
 					throws SQLException, DataAccessException {
 				ps.setString(1, tmp.getTeacherid());
-				ps.setDate(2, new java.sql.Date(tmp.getStartTime().getTime()));
-				ps.setDate(3, new java.sql.Date(tmp.getEndTime().getTime()));
+				ps.setString(2, tmp.getStartTime());
+				ps.setString(3, tmp.getEndTime());
 				ps.setString(4, tmp.getUintOrDepartment());
 				ps.setString(5, tmp.getPostOrProtitle());
 				try {
@@ -54,8 +54,8 @@ public class WorkExperienceService {
 		result = jdbcTemplate.execute(sql, new AbstractLobCreatingPreparedStatementCallback(this.lobHandler) {
 			protected void setValues(PreparedStatement ps, LobCreator lc)
 					throws SQLException, DataAccessException {
-				ps.setDate(1, new java.sql.Date(tmp.getStartTime().getTime()));
-				ps.setDate(2, new java.sql.Date(tmp.getEndTime().getTime()));
+				ps.setString(1, tmp.getStartTime());
+				ps.setString(2,tmp.getEndTime());
 				ps.setString(3, tmp.getUintOrDepartment());
 				ps.setString(4, tmp.getPostOrProtitle());
 				try {
@@ -75,8 +75,8 @@ public class WorkExperienceService {
 				WorkExperienceBean result = new WorkExperienceBean();
 				result.setId(arg0.getInt(1));
 				result.setTeacherid(arg0.getString(2));
-				result.setStartTime(arg0.getDate(3));
-				result.setEndTime(arg0.getDate(4));
+				result.setStartTime(arg0.getString(3));
+				result.setEndTime(arg0.getString(4));
 				result.setUintOrDepartment(arg0.getString(5));
 				result.setPostOrProtitle(arg0.getString(6));
 				try {

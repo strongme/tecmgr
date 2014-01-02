@@ -33,7 +33,7 @@ public class WorkProMoralService {
 			protected void setValues(PreparedStatement ps, LobCreator lc)
 					throws SQLException, DataAccessException {
 				ps.setString(1, tmp.getTeacherid());
-				ps.setDate(2, new java.sql.Date(tmp.getTime().getTime()));
+				ps.setString(2, tmp.getTime());
 				ps.setInt(3, tmp.getFamEdu());
 				ps.setInt(4, tmp.getPhyPunishiment());
 				ps.setInt(5, tmp.getFinancialRelation());
@@ -55,7 +55,7 @@ public class WorkProMoralService {
 		result = jdbcTemplate.execute(sql, new AbstractLobCreatingPreparedStatementCallback(this.lobHandler) {
 			protected void setValues(PreparedStatement ps, LobCreator lc)
 					throws SQLException, DataAccessException {
-				ps.setDate(1, new java.sql.Date(tmp.getTime().getTime()));
+				ps.setString(1,tmp.getTime());
 				ps.setInt(2, tmp.getFamEdu());
 				ps.setInt(3, tmp.getPhyPunishiment());
 				ps.setInt(4, tmp.getFinancialRelation());
@@ -77,7 +77,7 @@ public class WorkProMoralService {
 				WorkProMoralBean result = new WorkProMoralBean();
 				result.setId(arg0.getInt(1));
 				result.setTeacherid(arg0.getString(2));
-				result.setTime(arg0.getDate(3));
+				result.setTime(arg0.getString(3));
 				result.setFamEdu(arg0.getInt(4));
 				result.setPhyPunishiment(arg0.getInt(5));
 				result.setFinancialRelation(arg0.getInt(6));

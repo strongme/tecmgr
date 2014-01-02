@@ -11,11 +11,11 @@
     <div class="row">
         <div class="large-6 columns">
             <label class="label">身份证号码</label>
-            <input type="text" placeholder="身份证号码"  data-ng-model="cur.teacherId">
+            <input type="text" placeholder="身份证号码"  data-ng-model="cur.teacherId" readonly>
         </div>
         <div class="large-6 columns">
             <label class="label">时间</label>
-           <input type="text" class="span2" value="" id="pt" >
+           <input type="text" data-ng-model="cur.planTime" >
         </div>
     </div>
     <div class="row">
@@ -71,7 +71,7 @@
      <div class="inputAreaBnt" > 
         <div class="row">
         	<div class="large-12 columns">
-        	<a class="small button large-12" data-ng-click="saveWholePlan()" data-ng-disabled="!cur.eduIdea||!cur.remark||!cur.disadvanced||!cur.advanced||!cur.planDetail">保存</a>
+        	<a class="small button large-12" data-ng-click="saveWholePlan()" data-ng-disabled="!cur.planTime||!cur.eduIdea||!cur.remark||!cur.disadvanced||!cur.advanced||!cur.planDetail">保存</a>
         	</div>
         </div>
       </div>

@@ -19,7 +19,7 @@
     	</tr>
     	<tbody>
     		<tr data-ng-repeat="wl in curWlList">
-    			 <td><input type="text" class="span2" value="{{wl.time}}" id="time{{wl.id}}"  data-ng-mouseover="initDatePickerSingle('time'+wl.id)"></td>
+    			 <td><input type="text" data-ng-model="wl.time"></td>
 	            <td><input type="text"   data-ng-model="wl.name"></td>
 	            <td><input type="text"   data-ng-model="wl.guideInfo"></td>
 	            <td><input type="text"   data-ng-model="wl.award"></td>
@@ -45,7 +45,7 @@
     	</tr>
     	<tbody>
     		<tr>
-    			<td><input type="text" class="span2" value="" id="time" ></td>
+    			<td><input type="text" data-ng-model="newwl.time"></td>
 	            <td><input type="text"   data-ng-model="newwl.name" placeholder="师傅姓名"></td>
 	            <td><input type="text"   data-ng-model="newwl.guideInfo" placeholder="学习情况"></td>
 	            <td><input type="text"   data-ng-model="newwl.award" placeholder="分数或者优良中差或者其他描述等"></td>
@@ -54,7 +54,7 @@
     		</tr>
     		   <tr>
 	        	<td colspan="6">
-	        		<a class="small button round large-12" data-ng-click="saveWorkLearning()" data-ng-disabled="!newwl.name||!newwl.guideInfo||!newwl.award||!newwl.proff||!newwl.remark">添加</a>
+	        		<a class="small button round large-12" data-ng-click="saveWorkLearning()" data-ng-disabled="!newwl.name||!newwl.time||!newwl.guideInfo||!newwl.award||!newwl.proff||!newwl.remark">添加</a>
 	        	</td>
 	        </tr>
     	</tbody>

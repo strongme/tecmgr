@@ -19,7 +19,7 @@
 	    	</tr>
 	    	<tbody>
 	    		<tr data-ng-repeat="wts in curWtsList">
-	    			<td><input type="text" class="span2" value="{{wts.time}}" id="time{{wts.id}}"  data-ng-mouseover="initDatePickerSingle('time'+wts.id)"></td>
+	    			<td><input type="text" data-ng-model="wts.time"></td>
 		            <td><input type="text"   data-ng-model="wts.class_"></td>
 		            <td><input type="text"   data-ng-model="wts.form"></td>
 		            <td><input type="text"   data-ng-model="wts.score"></td>
@@ -45,7 +45,7 @@
 	    	</tr>
 	    	<tbody>
 	    		<tr>
-	    			<td><input type="text" class="span2" value="" id="time" ></td>
+	    			<td><input type="text" data-ng-model="newwts.time"></td>
 		            <td><input type="text"   data-ng-model="newwts.class_" placeholder="请填国家、省、市、校或者其他级别"></td>
 		            <td><input type="text"   data-ng-model="newwts.form" placeholder="培训形式，如讲座、论坛等"></td>
 		            <td><input type="text"   data-ng-model="newwts.score" placeholder="分数或者优良中差或者其他描述等"></td>
@@ -54,7 +54,7 @@
 	    		</tr>
 	    		   <tr>
 	        	<td colspan="6">
-	        		<a class="small button round large-12" data-ng-click="saveWorkTeachSkill()" data-ng-disabled="!newwts.class_||!newwts.form||!newwts.score||!newwts.proff||!newwts.remark">添加</a>
+	        		<a class="small button round large-12" data-ng-click="saveWorkTeachSkill()" data-ng-disabled="!newwts.class_||!newwts.time||!newwts.form||!newwts.score||!newwts.proff||!newwts.remark">添加</a>
 	        	</td>
 	        </tr>
     		</tbody>

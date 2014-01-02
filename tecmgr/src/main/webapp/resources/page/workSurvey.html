@@ -18,7 +18,7 @@
     	</tr>
     	<tbody>
     		<tr data-ng-repeat="nw in curWsList">
-    			<td><input type="text" class="span2" value="{{nw.time}}" id="time{{nw.id}}"  data-ng-mouseover="initDatePickerSingle('time'+nw.id)"></td>
+    			<td><input type="text" data-ng-model="nw.time"></td>
 	            <td><input type="text"   data-ng-model="nw.jobDetails"></td>
 	            <td><input type="text"   data-ng-model="nw.org"></td>
 	            <td><input type="text"   data-ng-model="nw.proff"></td>
@@ -42,7 +42,7 @@
 	    	</tr>
 	    	<tbody>
 	    		<tr>
-		      		<td><input type="text" class="span2" value="" id="time"  ></td>
+		      		<td><input type="text" data-ng-model="newws.time"></td>
 		            <td><input type="text" placeholder="工作内容" data-ng-model="newws.jobDetails"></td>
 		            <td><input type="text" placeholder="组织单位" data-ng-model="newws.org"></td>
 		            <td><input type="text" placeholder="填写材料类别，如证书等" data-ng-model="newws.proff"></td>
@@ -50,7 +50,7 @@
 	    		</tr>
 	    		<tr>
 	        	<td colspan="5">
-	        		<a class="small button round large-12" data-ng-click="saveWorkSurvey()" data-ng-disabled="!newws.jobDetails||!newws.org||!newws.proff||!newws.remark">添加</a>
+	        		<a class="small button round large-12" data-ng-click="saveWorkSurvey()" data-ng-disabled="!newws.time||!newws.jobDetails||!newws.org||!newws.proff||!newws.remark">添加</a>
 	        	</td>
 	        </tr>
 	    	</tbody>
