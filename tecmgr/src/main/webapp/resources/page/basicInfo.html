@@ -13,7 +13,7 @@
             <div class="row">
                 <div class="large-4 columns">
                     <label class="label">身份证号码</label>
-                    <input type="text" placeholder="身份证号码"  data-ng-model="cur.teacherId">
+                    <input type="text" placeholder="身份证号码"  data-ng-model="cur.teacherId" readonly>
                 </div>
                 <div class="large-4 columns">
                     <label class="label">性别</label>
@@ -32,7 +32,7 @@
             <div class="row">
                 <div class="large-4 columns">
                     <label class="label">出生年月</label>
-					<input type="text" class="span2" value="" id="birth"   placeholder="请选择出生日期">
+					<input type="text"  data-ng-model="cur.birth"   placeholder="请输入出生日期">
                 </div>
                 <div class="large-4 columns">
                     <label class="label">民族</label>
@@ -112,7 +112,7 @@
       <div class="inputAreaBnt"> 
         <div class="row">
         	<div class="large-12 columns">
-        	<a class="small button large-12" data-ng-click="saveBasicInfo()" data-ng-disabled="!cur.teacherId||!cur.native_||!cur.nation||!cur.politicsStatus||!cur.subject||!cur.highestDegree||!cur.professionalTitle||!cur.position||!cur.photo||!cur.phone||!cur.qq||!cur.email||!cur.departmentName||!cur.talent||!cur.remark2||!curHonour.honourDetail">保存</a>
+        	<a class="small button large-12" data-ng-click="saveBasicInfo()" data-ng-disabled="!cur.teacherId||!cur.native_||!cur.birth||!cur.nation||!cur.politicsStatus||!cur.subject||!cur.highestDegree||!cur.professionalTitle||!cur.position||!cur.photo||!cur.phone||!cur.qq||!cur.email||!cur.departmentName||!cur.talent||!cur.remark2||!curHonour.honourDetail">保存</a>
         	</div>
         </div>
       </div> 

@@ -19,7 +19,7 @@
     	</tr>
     	<tbody>
 	    	<tr data-ng-repeat="wpm in curWpmList">
-	    		<td><input type="text" class="span2" value="{{wpm.time}}" id="time{{wpm.id}}"  data-ng-mouseover="initDatePickerSingle('time'+wpm.id)"></td>
+	    		<td><input type="text" data-ng-model="wpm.time" ></td>
             <td>
             	 <select data-ng-model="wpm.famEdu" class="sellabel" >
                     	<option value="1">是</option>
@@ -65,7 +65,7 @@
     	</tr>
     	<tbody>
     		<tr>
-    			<td><input type="text" class="span2" value="" id="time" ></td>
+    			<td><input type="text" data-ng-model="newwpm.time" ></td>
             <td>
             	 <select data-ng-model="newwpm.famEdu" class=" sellabel" >
                     	<option value="1">是</option>
@@ -94,7 +94,7 @@
     		</tr>
     		  <tr>
 	        	<td colspan="6">
-	        		<a class="small button round large-12" data-ng-click="saveWorkCommSupport()" data-ng-disabled="!newwpm.famEdu||!newwpm.phyPunishiment||!newwpm.financialRelation||!newwpm.reference||!newwpm.remark">添加</a>
+	        		<a class="small button round large-12" data-ng-click="saveWorkCommSupport()" data-ng-disabled="!newwpm.time||!newwpm.famEdu||!newwpm.phyPunishiment||!newwpm.financialRelation||!newwpm.reference||!newwpm.remark">添加</a>
 	        	</td>
 	        </tr>
     	</tbody>

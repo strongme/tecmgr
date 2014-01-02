@@ -20,7 +20,7 @@
     	</tr>
     	<tbody>
     		<tr data-ng-repeat="wtr in curWtrList">
-    			<td><input type="text" class="span2" value="{{wtr.time}}" id="time{{wtr.id}}"  data-ng-mouseover="initDatePickerSingle('time'+wtr.id)"></td>
+    			<td><input type="text" data-ng-model="wtr.time"></td>
 	            <td><input type="text"   data-ng-model="wtr.name"></td>
 	            <td><input type="text"   data-ng-model="wtr.org"></td>
 	            <td><input type="text"   data-ng-model="wtr.role"></td>
@@ -48,7 +48,7 @@
     	</tr>
     	<tbody>
     		<tr>
-    			<td><input type="text" class="span2" value="" id="time" ></td>
+    			<td><input type="text" data-ng-model="newwtr.time"></td>
 	            <td><input type="text"   data-ng-model="newwtr.name" placeholder="课题名称"></td>
 	            <td><input type="text"   data-ng-model="newwtr.org" placeholder="立项部门"></td>
 	            <td><input type="text"   data-ng-model="newwtr.role" placeholder="本人承担部分"></td>
@@ -58,7 +58,7 @@
     		</tr>
     		 <tr>
 	        	<td colspan="7">
-	        		<a class="small button round large-12" data-ng-click="saveWorkTeachResearch()" data-ng-disabled="!newwtr.name||!newwtr.org||!newwtr.role||!newwtr.finishedDetails||!newwtr.proff||!newwtr.remark">添加</a>
+	        		<a class="small button round large-12" data-ng-click="saveWorkTeachResearch()" data-ng-disabled="!newwtr.name||!newwtr.time||!newwtr.org||!newwtr.role||!newwtr.finishedDetails||!newwtr.proff||!newwtr.remark">添加</a>
 	        	</td>
 	        </tr>
     	</tbody>

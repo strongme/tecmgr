@@ -19,7 +19,7 @@
 		</tr>
 		<tbody>
 			<tr data-ng-repeat="wl in curWlList">
-			 <td><input type="text" class="span2" value="{{wl.time}}" id="time{{wl.id}}"  data-ng-mouseover="initDatePickerSingle('time'+wl.id)"></td>
+			 <td><input type="text" data-ng-model="wl.time"></td>
 	         <td><input type="text"   data-ng-model="wl.name"></td>
 	         <td><input type="text"   data-ng-model="wl.range"></td>
 	         <td><input type="text"   data-ng-model="wl.org"></td>
@@ -45,7 +45,7 @@
 		</tr>
 		<tbody>
 			<tr>
-				<td><input type="text" class="span2" value="" id="time"  ></td>
+				<td><input type="text" data-ng-model="newwl.time"></td>
 	            <td><input type="text" placeholder="名称" data-ng-model="newwl.name"></td>
 	            <td><input type="text" placeholder="开课/讲座范围" data-ng-model="newwl.range"></td>
 	            <td><input type="text" placeholder="组织单位" data-ng-model="newwl.org"></td>
@@ -54,7 +54,7 @@
 			</tr>
 			<tr>
 				<td colspan="6">
-	        		<a class="mall button round large-12" data-ng-click="saveWorkLecture()" data-ng-disabled="!newwl.name||!newwl.range||!newwl.org||!newwl.proff||!newwl.remark">添加</a>
+	        		<a class="mall button round large-12" data-ng-click="saveWorkLecture()" data-ng-disabled="!newwl.time||!newwl.name||!newwl.range||!newwl.org||!newwl.proff||!newwl.remark">添加</a>
 	        	</td>
 			</tr>
 		</tbody>

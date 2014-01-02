@@ -35,7 +35,7 @@ public class WorkAwardService {
 					throws SQLException, DataAccessException {
 				ps.setString(1, tmp.getTeacherid());
 				ps.setString(2, tmp.getName());
-				ps.setDate(3, new java.sql.Date(tmp.getTime().getTime()));
+				ps.setString(3, tmp.getTime());
 				ps.setString(4, tmp.getAward());
 				ps.setString(5, tmp.getOrg());
 				ps.setString(6, tmp.getProff());
@@ -55,7 +55,7 @@ public class WorkAwardService {
 		result = jdbcTemplate.execute(sql, new AbstractLobCreatingPreparedStatementCallback(this.lobHandler) {
 			protected void setValues(PreparedStatement ps, LobCreator lc)
 					throws SQLException, DataAccessException {
-				ps.setDate(1, new java.sql.Date(tmp.getTime().getTime()));
+				ps.setString(1, tmp.getTime());
 				ps.setString(2, tmp.getName());
 				ps.setString(3, tmp.getAward());
 				ps.setString(4, tmp.getOrg());
@@ -77,7 +77,7 @@ public class WorkAwardService {
 				result.setId(arg0.getInt(1));
 				result.setTeacherid(arg0.getString(2));
 				result.setName(arg0.getString(3));
-				result.setTime(arg0.getDate(4));
+				result.setTime(arg0.getString(4));
 				result.setAward(arg0.getString(5));
 				result.setOrg(arg0.getString(6));
 				result.setProff(arg0.getString(7));

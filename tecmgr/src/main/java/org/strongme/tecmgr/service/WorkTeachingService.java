@@ -33,7 +33,7 @@ public class WorkTeachingService {
 			protected void setValues(PreparedStatement ps, LobCreator lc)
 					throws SQLException, DataAccessException {
 				ps.setString(1, tmp.getTeacherid());
-				ps.setDate(2, new java.sql.Date(tmp.getTime().getTime()));
+				ps.setString(2, tmp.getTime());
 				ps.setInt(3, tmp.getStunum());
 				ps.setString(4, tmp.getLearnGuide());
 				ps.setString(5, tmp.getHonour());
@@ -41,7 +41,6 @@ public class WorkTeachingService {
 				try {
 					lc.setBlobAsBytes(ps,7, tmp.getRemark().getBytes("UTF-8"));
 				} catch (UnsupportedEncodingException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}});
@@ -55,7 +54,7 @@ public class WorkTeachingService {
 		result = jdbcTemplate.execute(sql, new AbstractLobCreatingPreparedStatementCallback(this.lobHandler) {
 			protected void setValues(PreparedStatement ps, LobCreator lc)
 					throws SQLException, DataAccessException {
-				ps.setDate(1, new java.sql.Date(tmp.getTime().getTime()));
+				ps.setString(1,tmp.getTime());
 				ps.setInt(2, tmp.getStunum());
 				ps.setString(3, tmp.getLearnGuide());
 				ps.setString(4, tmp.getHonour());
@@ -77,7 +76,7 @@ public class WorkTeachingService {
 				WorkTeachingBean result = new WorkTeachingBean();
 				result.setId(arg0.getInt(1));
 				result.setTeacherid(arg0.getString(2));
-				result.setTime(arg0.getDate(3));
+				result.setTime(arg0.getString(3));
 				result.setStunum(arg0.getInt(4));
 				result.setLearnGuide(arg0.getString(5));
 				result.setHonour(arg0.getString(6));

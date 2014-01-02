@@ -35,7 +35,7 @@ public class TeacherBasicInfoService {
 				ps.setString(1, tmp.getTeacherId());
 				ps.setInt(2, tmp.getGender());
 				ps.setString(3, tmp.getNative_());
-				ps.setDate(4, new java.sql.Date(tmp.getBirth().getTime()));
+				ps.setString(4, tmp.getBirth());
 				ps.setString(5, tmp.getNation());
 				ps.setString(6, tmp.getPoliticsStatus());
 				ps.setString(7, tmp.getSubject());
@@ -66,7 +66,7 @@ public class TeacherBasicInfoService {
 					throws SQLException, DataAccessException {
 				ps.setInt(1, tmp.getGender());
 				ps.setString(2, tmp.getNative_());
-				ps.setDate(3, new java.sql.Date(tmp.getBirth().getTime()));
+				ps.setString(3, tmp.getBirth());
 				ps.setString(4, tmp.getNation());
 				ps.setString(5, tmp.getPoliticsStatus());
 				ps.setString(6, tmp.getSubject());
@@ -97,7 +97,7 @@ public class TeacherBasicInfoService {
 				result.setTeacherId(arg0.getString(2));
 				result.setGender(arg0.getInt(3));
 				result.setNative_(arg0.getString(4));
-				result.setBirth(arg0.getDate(5));
+				result.setBirth(arg0.getString(5));
 				result.setNation(arg0.getString(6));
 				result.setPoliticsStatus(arg0.getString(7));
 				result.setSubject(arg0.getString(8));

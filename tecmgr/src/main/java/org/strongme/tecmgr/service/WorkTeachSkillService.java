@@ -33,7 +33,7 @@ public class WorkTeachSkillService {
 			protected void setValues(PreparedStatement ps, LobCreator lc)
 					throws SQLException, DataAccessException {
 				ps.setString(1, tmp.getTeacherid());
-				ps.setDate(2, new java.sql.Date(tmp.getTime().getTime()));
+				ps.setString(2, tmp.getTime());
 				ps.setString(3, tmp.getClass_());
 				ps.setString(4, tmp.getForm());
 				ps.setString(5, tmp.getScore());
@@ -55,7 +55,7 @@ public class WorkTeachSkillService {
 		result = jdbcTemplate.execute(sql, new AbstractLobCreatingPreparedStatementCallback(this.lobHandler) {
 			protected void setValues(PreparedStatement ps, LobCreator lc)
 					throws SQLException, DataAccessException {
-				ps.setDate(1, new java.sql.Date(tmp.getTime().getTime()));
+				ps.setString(1, tmp.getTime());
 				ps.setString(2, tmp.getClass_());
 				ps.setString(3, tmp.getForm());
 				ps.setString(4, tmp.getScore());
@@ -77,7 +77,7 @@ public class WorkTeachSkillService {
 				WorkTeachSkillBean result = new WorkTeachSkillBean();
 				result.setId(arg0.getInt(1));
 				result.setTeacherid(arg0.getString(2));
-				result.setTime(arg0.getDate(3));
+				result.setTime(arg0.getString(3));
 				result.setClass_(arg0.getString(4));
 				result.setForm(arg0.getString(5));
 				result.setScore(arg0.getString(6));

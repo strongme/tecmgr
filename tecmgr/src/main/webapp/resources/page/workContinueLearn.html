@@ -18,7 +18,7 @@
     	</tr>
     	<tbody>
     		<tr data-ng-repeat="wcl in curWclList">
-    			<td><input type="text" class="span2" value="{{wcl.time}}" id="time{{wcl.id}}"  data-ng-mouseover="initDatePickerSingle('time'+wcl.id)"></td>
+    			<td><input type="text" data-ng-model="wcl.time"></td>
 	            <td><input type="text"   data-ng-model="wcl.contentAndScore"></td>
 	            <td><input type="text"   data-ng-model="wcl.org"></td>
 	            <td><input type="text"   data-ng-model="wcl.proff"></td>
@@ -42,7 +42,7 @@
     	</tr>
     	<tbody>
     		<tr>
-    			<td><input type="text" class="span2" value="" id="time" ></td>
+    			<td><input type="text" data-ng-model="newwcl.time"></td>
 	            <td><input type="text"   data-ng-model="newwcl.contentAndScore" placeholder="学习内容和成绩，不超过40字"></td>
 	            <td><input type="text"   data-ng-model="newwcl.org" placeholder="主办单位"></td>
 	            <td><input type="text"   data-ng-model="newwcl.proff" placeholder="填写材料类别，如证书等"></td>
@@ -50,7 +50,7 @@
     		</tr>
     		  <tr>
 	        	<td colspan="5">
-	        		<a class="small button round large-12" data-ng-click="saveWorkContinueLearn()" data-ng-disabled="!newwcl.contentAndScore||!newwcl.org||!newwcl.proff||!newwcl.remark">添加</a>
+	        		<a class="small button round large-12" data-ng-click="saveWorkContinueLearn()" data-ng-disabled="!newwcl.contentAndScore||!newwcl.org||!newwcl.time||!newwcl.proff||!newwcl.remark">添加</a>
 	        	</td>
 	        </tr>
     	</tbody>

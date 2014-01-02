@@ -19,7 +19,7 @@
     	</tr>
     	<tbody>
     		<tr data-ng-repeat="wa in curWaList">
-    			<td><input type="text" class="span2" value="{{wa.time}}" id="time{{wa.id}}"  data-ng-mouseover="initDatePickerSingle('time'+wa.id)"></td>
+    			<td><input type="text" data-ng-model="wa.time"></td>
 	            <td><input type="text"   data-ng-model="wa.name"></td>
 	            <td><input type="text"   data-ng-model="wa.award"></td>
 	            <td><input type="text"  data-ng-model="wa.org"></td>
@@ -45,7 +45,7 @@
 	    	</tr>
 	    	<tbody>
 	    	<tr>
-	    		<td><input type="text" class="span2" value="" id="time" ></td>
+	    		<td><input type="text" data-ng-model="newwa.time" ></td>
 	            <td><input type="text" placeholder="竞赛名称"  data-ng-model="newwa.name"></td>
 	            <td><input type="text" placeholder="所获奖项"  data-ng-model="newwa.award"></td>
 	            <td><input type="text" placeholder="组织单位"  data-ng-model="newwa.org"></td>
@@ -54,7 +54,7 @@
 	            </tr>
                <tr>
 	        	<td colspan="6">
-	        		<a class="small button round large-12" data-ng-click="saveWorkAward()" data-ng-disabled="!newwa.name||!newwa.award||!newwa.org||!newwa.proff||!newwa.remark">添加</a>
+	        		<a class="small button round large-12" data-ng-click="saveWorkAward()" data-ng-disabled="!newwa.name||!newwa.award||!newwa.time||!newwa.org||!newwa.proff||!newwa.remark">添加</a>
 	        	</td>
 	        </tr>
 	    	</tbody>

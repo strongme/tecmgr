@@ -18,8 +18,8 @@
     	</tr>
     	<tbody >
         <tr data-ng-repeat="we in curExpList">
-            <td><input type="text" class="span2" value="{{we.startTime}}" id="s{{we.id}}"   data-ng-mouseover="initDatePickerSingle('s'+we.id)"></td>
-            <td><input type="text"  class="span2" value="{{we.endTime}}"  id="e{{we.id}}"  data-ng-mouseover="initDatePickerSingle('e'+we.id)"></td>
+            <td><input type="text" data-ng-model="we.startTime"></td>
+            <td><input type="text"  data-ng-model="we.endTime"></td>
             <td><input type="text"   data-ng-model="we.uintOrDepartment"></td>
             <td><input type="text"   data-ng-model="we.postOrProtitle"></td>
             <td><input type="text"   data-ng-model="we.remark3"></td>
@@ -43,15 +43,15 @@
     	<tbody>
 	      <tr >
 	      		<input type="hidden" data-ng-model="curExp.teacherid">
-	      		<td><input type="text" class="span2" value="" id="start"   placeholder="起始日期"></td>
-	            <td><input type="text" class="span2" value="" id="end"   placeholder="结束日期"></td>
+	      		<td><input type="text" data-ng-model="curExp.startTime"   placeholder="起始日期"></td>
+	            <td><input type="text" data-ng-model="curExp.endTime"   placeholder="结束日期"></td>
 	            <td><input type="text" placeholder="单位、部门" data-ng-model="curExp.uintOrDepartment"></td>
 	            <td><input type="text" placeholder="职务、职称" data-ng-model="curExp.postOrProtitle"></td>
 	            <td><input type="text" placeholder="如果没有请填写“无”" data-ng-model="curExp.remark3"></td>
 	        </tr>
 	        <tr>
 	        	<td colspan="5">
-	        		<a class="small button round large-12" data-ng-click="saveWorkExp()" data-ng-disabled="!curExp.uintOrDepartment||!curExp.postOrProtitle||!curExp.remark3">添加</a>
+	        		<a class="small button round large-12" data-ng-click="saveWorkExp()" data-ng-disabled="!curExp.endTime||!curExp.startTime||!curExp.uintOrDepartment||!curExp.postOrProtitle||!curExp.remark3">添加</a>
 	        	</td>
 	        </tr>
 	        </tbody>

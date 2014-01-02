@@ -33,7 +33,7 @@ public class OverAllPlanService {
 			protected void setValues(PreparedStatement ps, LobCreator lc)
 					throws SQLException, DataAccessException {
 				ps.setString(1, tmp.getTeacherId());
-				ps.setDate(2, new java.sql.Date(tmp.getPlanTime().getTime()));
+				ps.setString(2, tmp.getPlanTime());
 				try {
 					lc.setBlobAsBytes(ps, 3, tmp.getEduIdea().getBytes("UTF-8"));
 					lc.setBlobAsBytes(ps, 4, tmp.getAdvanced().getBytes("UTF-8"));
@@ -54,7 +54,7 @@ public class OverAllPlanService {
 		result = jdbcTemplate.execute(sql, new AbstractLobCreatingPreparedStatementCallback(this.lobHandler) {
 			protected void setValues(PreparedStatement ps, LobCreator lc)
 					throws SQLException, DataAccessException {
-				ps.setDate(1, new java.sql.Date(tmp.getPlanTime().getTime()));
+				ps.setString(1, tmp.getPlanTime());
 				try {
 					lc.setBlobAsBytes(ps, 2, tmp.getEduIdea().getBytes("UTF-8"));
 					lc.setBlobAsBytes(ps, 3, tmp.getAdvanced().getBytes("UTF-8"));
@@ -75,7 +75,7 @@ public class OverAllPlanService {
 				OverAllPlanBean result = new OverAllPlanBean();
 				result.setId(arg0.getInt(1));
 				result.setTeacherId(arg0.getString(2));
-				result.setPlanTime(arg0.getDate(3));
+				result.setPlanTime(arg0.getString(3));
 				try {
 					result.setEduIdea(new String(lobHandler.getBlobAsBytes(arg0, 4),"UTF-8"));
 					result.setAdvanced(new String(lobHandler.getBlobAsBytes(arg0, 5),"UTF-8"));
