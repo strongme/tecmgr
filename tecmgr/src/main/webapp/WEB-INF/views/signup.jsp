@@ -17,7 +17,7 @@
 </head>
 <body>
 <div style="text-align: center;">
-<h6><font face="楷体" color="pink" >如有问题请及时联系信息中心 ！申老师   TEL：15536660688 小袁  QQ：2022593664 TEL：15619388806</font></h6>
+<h6><font face="楷体" color="pink" >如有问题请及时联系信息中心 ！申建强老师   TEL：15536660688 袁子茜  QQ：2022593664 TEL：15619388806</font></h6>
 </div>
 <div style="width: 30%;height: auto;margin:5% auto;">
 		<form action="<%=request.getContextPath() %>/signup" method="post" name="signup">
