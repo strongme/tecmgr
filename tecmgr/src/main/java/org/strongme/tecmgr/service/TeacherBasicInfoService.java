@@ -89,7 +89,7 @@ public class TeacherBasicInfoService {
 	}
 	public TeacherBasicInfoBean get(String teacherid) {
 		TeacherBasicInfoBean result = new TeacherBasicInfoBean();
-		String sql = "SELECT id,teacherId,gender,native,birth,nation,politicsStatus,subject,highestDegree,professionalTitle,position,phone,email,qq,departmentName,talent,photo,remark2 FROM teacherbasicinfo where teacherId='"+teacherid+"'";
+		String sql = "SELECT a.id,a.teacherId,a.gender,a.native,a.birth,a.nation,a.politicsStatus,a.subject,a.highestDegree,a.professionalTitle,a.position,a.phone,a.email,a.qq,a.departmentName,a.talent,a.photo,a.remark2,b.teachername FROM teacherbasicinfo a inner join teacherrecord b on a.teacherId='"+teacherid+"' and b.teacherid='"+teacherid+"'";
 		List<TeacherBasicInfoBean> list = jdbcTemplate.query(sql, new RowMapper<TeacherBasicInfoBean>() {
 			public TeacherBasicInfoBean mapRow(ResultSet arg0, int arg1) throws SQLException {
 				TeacherBasicInfoBean result = new TeacherBasicInfoBean();
@@ -108,7 +108,10 @@ public class TeacherBasicInfoService {
 				result.setEmail(arg0.getString(13));
 				result.setQq(arg0.getString(14));
 				result.setDepartmentName(arg0.getString(15));
+				result.setTalent(arg0.getString(16));
 				result.setPhoto(arg0.getString(17));
+				result.setRemark2(arg0.getString(18));
+				result.setTeacherName(arg0.getString(19));
 				try {
 					result.setTalent(new String(lobHandler.getBlobAsBytes(arg0, 16),"UTF-8"));
 					result.setRemark2(new String(lobHandler.getBlobAsBytes(arg0, 18),"UTF-8"));

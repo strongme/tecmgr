@@ -1,11 +1,11 @@
 package org.strongme.tecmgr.bean;
-import java.util.Date;
 
 public class TeacherBasicInfoBean  implements java.io.Serializable {
 
 
     // Fields    
 
+	private String teacherName;
      private Integer id;
      private String teacherId;
      private Integer gender;
@@ -131,6 +131,12 @@ public class TeacherBasicInfoBean  implements java.io.Serializable {
 	}
 	public void setRemark2(String remark2) {
 		this.remark2 = remark2;
+	}
+	public String getTeacherName() {
+		return teacherName;
+	}
+	public void setTeacherName(String teacherName) {
+		this.teacherName = teacherName;
 	}
 
 

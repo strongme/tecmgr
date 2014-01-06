@@ -58,6 +58,7 @@
   </style>
 </head>
 <body>
+<div style="width: 630px;margin: 10px auto;"><!--宽630 高891  -->
 <jsp:include page="preview/basicInfo.jsp"></jsp:include>
 <jsp:include page="preview/workexp.jsp"></jsp:include>
 <jsp:include page="preview/wholeGrowPlan.jsp"></jsp:include>
@@ -76,7 +77,7 @@
 <jsp:include page="preview/workTeachSkill.jsp"></jsp:include>
 <jsp:include page="preview/workCommSupport.jsp"></jsp:include>
 <jsp:include page="preview/workProMoral.jsp"></jsp:include>
-<a class="small button large-12 print" onclick="window.print()">打印</a>
+</div>
 
 
 
