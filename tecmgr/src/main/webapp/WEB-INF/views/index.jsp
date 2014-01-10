@@ -96,7 +96,7 @@
                     <li><a href="#/workTeachResearch/${teacher.teacherId}">教学科研</a></li>
                     <li><a href="#/workBookWrite/${teacher.teacherId}">论文论著编写</a></li>
                     <li><a href="#/workTeaching/${teacher.teacherId}">指导学生</a></li>
-                    <li><a href="#/workLearning/${teacher.teacherId}">青年教师</a></li>
+                    <li><a href="#/workLearning/${teacher.teacherId}">带徒拜师情况</a></li>
                     <li><a href="#/workContinueLearn/${teacher.teacherId}">继续教育</a></li>
                     <li><a href="#/workTeachSkill/${teacher.teacherId}">教育技术培训</a></li>
                     <li><a href="#/workCommSupport/${teacher.teacherId}">交流支教</a></li>
